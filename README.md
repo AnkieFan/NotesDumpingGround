@@ -9,6 +9,8 @@ The cyber dumping ground of Ankie's notes.
 ## Period 4:
 ### Data Sturcture and Algorithm
   
+  #### Code Assignments:
+  + Minimum Spanning Tree
   
 ## Period 5:
 ### Software Engineer:
