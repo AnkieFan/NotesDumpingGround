@@ -10,6 +10,7 @@ The cyber dumping ground of Ankie's notes.
 ### Data Sturcture and Algorithm
   
   #### Code Assignments:
+  + [Lab 6](https://github.com/AnkieFan/NotesDumpingGround/tree/main/DSA/lab6/src)
   + [Minimum Spanning Tree](https://github.com/AnkieFan/NotesDumpingGround/tree/main/DSA/MST/src)
   
 ## Period 5:
