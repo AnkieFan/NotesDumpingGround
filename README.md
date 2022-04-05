@@ -1,5 +1,5 @@
 # NotesDumpingGround
-The cyber dumping ground of Ankie's notes. ***English & Chinese mixed.***
+The cyber dumping ground of Ankie's notes. *English & Chinese mixed.*
 
 ## Rules:
 ***1. Daniël's review is not allowed.***  
