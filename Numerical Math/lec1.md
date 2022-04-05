@@ -33,5 +33,23 @@ where $1 ≤ *m* < 10$ and *e* is an integer.
 ## Digital representations
 
 ### Binary Integers
++ Fixed-width: e.g. Java: 32-bit -2^31 to 2 ^ 31 +1
 
 #### Fixed-point & Floating-point
++ Single-precision
++ Double-precision
+
+
+## Errors in Scientific Computing
+
+###
++ Absolute error: $|x_1 - x_2|$
++ Relative error: $|p∗ − p|/|p|$
+
+###
++ Accuracy (准确性) 
++ Precision (精度)
++ e.g.: 3.1428571 compared with 3.141592    
+  + accuracy: 3
+  + precision: 8
+
