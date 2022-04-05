@@ -19,3 +19,5 @@ The cyber dumping ground of Ankie's notes.
   1. [lecture 1](https://github.com/AnkieFan/NotesDumpingGround/blob/main/SE/lec1.md)
 ### Logic:
   1. [lecture 1](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Logic/lec1.md)
+### Numerical Mathematics:
+  1. [Lecture 1](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/lec1.md)
