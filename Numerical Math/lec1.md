@@ -30,4 +30,8 @@ where $1 ≤ *m* < 10$ and *e* is an integer.
 + The length of the mantissa is the number of significant figures.
 
 
-### Digital representations
+## Digital representations
+
+### Binary Integers
+
+#### Fixed-point & Floating-point
