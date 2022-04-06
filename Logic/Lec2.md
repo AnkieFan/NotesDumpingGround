@@ -1,6 +1,5 @@
 # semantic tableaux
 
-
 ## Valid
 $\frac{\varphi _ 1, ... \varphi _n}{ψ}$
 An inference is valid iff in every situation in which all premises $\varphi_1, . . . , \varphi_n$ are true, ψ is also true
@@ -17,6 +16,10 @@ there is no situation in which ϕ is false.
 
 e.g.:
 ¬(p ∧ q) ==> p ∧ q ==> p,q
+
+### Tableau calculation:
+![lec2_1](img/lec2_1.png)
+![lec2_2](img/lec2_2.png)
 
 ### Terminology
 + Sequent: Each node of the tree is called a sequent
@@ -39,4 +42,5 @@ F $\circ$	        closed -> contradiction
  To prove: A |= B   
  if $A \circ B $ is valid/satisfiable: has a counterexample
  So A cannot |= B
+ 
  
