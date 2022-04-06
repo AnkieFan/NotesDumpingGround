@@ -34,7 +34,7 @@ e.g.:
 
 
 $\circ$ F           closed -> valid
-$\circ$ F           At least one branch -> satisfiable
+$\circ$ F           At least one branch closed -> satisfiable
 F $\circ$	        closed -> contradiction
  
  
