@@ -19,5 +19,6 @@ The cyber dumping ground of Ankie's notes. *English & Chinese mixed.*
   1. [lecture 1](https://github.com/AnkieFan/NotesDumpingGround/blob/main/SE/lec1.md)
 ### Logic:
   1. [lecture 1](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Logic/lec1.md)
+  2. [lecture 2: semantic tableaux](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Logic/Lec2.md)
 ### Numerical Mathematics:
   1. [Lecture 1](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/lec1.md)
