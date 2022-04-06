@@ -128,7 +128,7 @@ answer. 计算过程中保留更精确的小数位数。
   + Solution: Re-write $x^3 − y^3 = (x − y) × (x^2 + xy + y^2)$
 + Safe subtraction: Subtraction of *exact* values at the *first step* is safe (no chance to accumulate errors)
   
-### Quadratic formula
+### Quadratic formula 求根公式
 
 ### Polynomials in Horner nested form
 $f(x) = x^3 - 5.34x^2 + 1.52x + 4.61$ --> $f(x) = ((x - 5.34)x + 1.52) + 4.61$
