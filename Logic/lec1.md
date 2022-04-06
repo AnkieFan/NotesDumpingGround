@@ -1,7 +1,7 @@
 # Logic
 
 + Valid inference:
-    + $(A_1, A_2, A_3, ... , A_n) / C$
+    + $\frac{A_1, A_2, A_3, ... , A_n}{C}$
     + An inference is **valid** if and only if **every** time **all** the premises are true, the conclusion is also true.
 
 e.g.: if x integer, then $x^3 - x$ is multiple of 3
