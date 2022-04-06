@@ -31,10 +31,12 @@ e.g.:
 
 ---------
 ### Important observations
-
-
 $\circ$ F           closed -> valid
 $\circ$ F           At least one branch closed -> satisfiable
 F $\circ$	        closed -> contradiction
  
+ How to do the exam:
+ To prove: A |= B   
+ if $A \circ B $ is valid/satisfiable: has a counterexample
+ So A cannot |= B
  
