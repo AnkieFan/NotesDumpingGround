@@ -1,6 +1,6 @@
 # Menu of Friday's dinner
 
-## if we went to Shovel's place
+## if go to Shovel's place
 1. 红烧肉 Pork belly
 2. 椰子鸡 
    + Chicken boiled by Coconut water. 
