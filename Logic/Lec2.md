@@ -38,7 +38,7 @@ $\circ$ F           closed -> valid
 $\circ$ F           At least one branch closed -> satisfiable
 F $\circ$	        closed -> contradiction
  
- ##How to do the exam:
+ ## How to do the exam:
  To prove: A |= B   
  if $A \circ B $ is valid/satisfiable: has a counterexample ==> there's ***at least a*** branch is closed
  So A cannot |= B
