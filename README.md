@@ -23,6 +23,6 @@ The cyber dumping ground of Ankie's notes. *English & Chinese mixed.*
   2. [lecture 2: semantic tableaux](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Logic/Lec2.md)
   3. [lecture 3: proof](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Logic/Lec3.md)
 ### Numerical Mathematics:
-  1. [Lecture 1](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/lec1.md)
-  2. [Tutorial 1 + RK method in topic 2](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/tutorial1%2Btopic2.md)
+  1. [Lecture 1](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/Lec4_5.md)
+  2. [Tutorial 1 + RK method in topic 2](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/Lec4_6.md)
   3. [Linear](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/Lec4_7.md)
