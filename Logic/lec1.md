@@ -44,3 +44,6 @@ or / disjunction | ∨
 the logic.
   + An axiom system is **complete** if every valid formula of the logic is
 a theorems.
+
+
+++++++++++
