@@ -1,6 +1,6 @@
 # semantic tableaux
 
-## Valid
+## Valid (tautologies)
 $\frac{\varphi _ 1, ... \varphi _n}{ψ}$
 An inference is valid iff in every situation in which all premises $\varphi_1, . . . , \varphi_n$ are true, ψ is also true
 
@@ -34,7 +34,7 @@ e.g.:
 
 ---------
 ### Important observations
-$\circ$ F           closed -> valid
+$\circ$ F           closed -> valid / tautologiess
 $\circ$ F           At least one branch closed -> satisfiable
 F $\circ$	        closed -> contradiction
  
