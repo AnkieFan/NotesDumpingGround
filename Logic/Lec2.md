@@ -34,7 +34,7 @@ e.g.:
 
 ---------
 ### Important observations
-$\circ$ F           closed -> valid / tautologiess
+$\circ$ F           closed -> valid / tautologies
 $\circ$ F           At least one branch closed -> satisfiable
 F $\circ$	        closed -> contradiction
  
