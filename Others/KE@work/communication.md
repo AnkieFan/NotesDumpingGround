@@ -8,3 +8,20 @@
 + use the subject line
 + **flag** options
 + email signature
+
+Angry email: !, capital letters, red, bold
++ reply all: like BCC
+
+### outlook
++ Get email from organization: block Mon, Tue, and Fri directly (im not in work!)
++ time management
++ plan regular meetings with company and UM supervisor
+
+For the first day: prepare enough food!
+
+## General communication guidelines
++ Introduce yourself
++ Make sure that everyone has all the information
++ do not assume, check
++ when asking for a meeting suggest dates
++ share informations -> KE@work
