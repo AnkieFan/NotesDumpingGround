@@ -4,7 +4,7 @@
 + spelling mistake
 
 ## template
-+ Pernal details
++ Personal details
 + Educational background
 
 

@@ -89,7 +89,7 @@ select ename from emp where ename like '%\_%;
 找出名字中最后一个字母是T的：
 select ename from emp where ename like '%T';
 
-## 排序
+## 排序 order by
 按照工资升序找出员工名和薪资：
 select ename, sal
 from emp
