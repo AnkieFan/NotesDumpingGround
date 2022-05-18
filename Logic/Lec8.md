@@ -15,17 +15,18 @@ a, b, c, . . .
 $ α; β, α ∪β, α^∗ $
 + If φ is a formula, then the following is an action: $?\varphi$ 
 
-### Symbols: (!!! Exam)
+### Symbols: (!!! bExam)
 + ```α; β```  sequential composition: **execute α and then β**
 + ```α∪β``` non-deterministic choice: **execute α or β**
 + $ α^* $ repetition: **loop to do α**
++ $αˇ$ Converse: reversing basic actions
 + $?\varphi$ test: **check wheather $\varphi$ is true**
 + **$〈α〉φ $ α can be executed in such a way that, after doing it, $\varphi$ is the case** 
 +  p ∨¬p as T
 +  ¬T as ⊥
 +  **$¬〈α〉¬φ $ as $ [α] φ$ ** After any execution of α, $\varphi$ is the case**
 + 〈α〉T : α can be executed
-+ \α] ⊥ : α cannot be executed
++ [α] ⊥ : α cannot be executed
 + 〈α〉φ ∧¬[α] φ 
   α can be executed it at least two different ways
 + [\[p]]: interpretations of p
@@ -47,10 +48,27 @@ The valid formulas of PDL can be derived from the following principles:
 + Modus ponens (MP): from φ and φ →ψ, infer ψ.
 + Necessitation (Nec): from φ infer [α] φ for any action α.
 
-#### Princeples for action operations (!!!Exam)
+#### Princeples for action operations
 + Test: $[?ψ] φ ↔(ψ →φ)$
 + Sequence: $[α; β] φ ↔[α] [β] φ$
 + Choice: $[α ∪β] φ ↔([α] φ ∧[β] φ)$
 + Repetition: 
   + Mix: $[α∗] φ ↔(φ ∧[α] [α∗] φ)$
   + Induction: $φ ∧[α^∗] (φ →[α] φ)→[α^∗] φ$
+
+## Semantics of PDL (!!!!! Exam)
+Given is a labelled transition system M = <S, V, R> for P and A.
+S: set of states
+V: valuation
+R: set of labelled transitions
+->:basic actions
+
++ $M, s |= p ⇐⇒ p ∈ V (s)$
++ $M, s |= ¬ϕ ⇐⇒ M, s 6|= ϕ$
++ $M, s |= ϕ ∨ ψ ⇐⇒ M, s |= ϕ or M, s |= ψ$
++ $M, s |= ϕ ∧ ψ ⇐⇒ M, s |= ϕ and M, s |= ψ$
++ $M, s |= <α>ϕ ⇐⇒$ for some t, $(s, t) ∈ [[α]]^M$ and $M, t |= ϕ$
++ $M, s |= [α]ϕ ⇐⇒$ for all t with $(s, t) ∈ [[α]]^M$ it holds that $M, t |= ϕ$
+
+
+$[[α]]^M$: a→M 图里的箭头
