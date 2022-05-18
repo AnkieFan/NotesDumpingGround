@@ -15,7 +15,7 @@ a, b, c, . . .
 $ α; β, α ∪β, α^∗ $
 + If φ is a formula, then the following is an action: $?\varphi$ 
 
-### Symbols: (!!! bExam)
+### Symbols: (!!! Exam)
 + ```α; β```  sequential composition: **execute α and then β**
 + ```α∪β``` non-deterministic choice: **execute α or β**
 + $ α^* $ repetition: **loop to do α**
@@ -24,7 +24,7 @@ $ α; β, α ∪β, α^∗ $
 + **$〈α〉φ $ α can be executed in such a way that, after doing it, $\varphi$ is the case** 
 +  p ∨¬p as T
 +  ¬T as ⊥
-+  **$¬〈α〉¬φ $ as $ [α] φ$ ** After any execution of α, $\varphi$ is the case**
++  $¬〈α〉¬φ $ as $ [α] φ$ **After any execution of α, $\varphi$ is the case**
 + 〈α〉T : α can be executed
 + [α] ⊥ : α cannot be executed
 + 〈α〉φ ∧¬[α] φ 
@@ -67,7 +67,7 @@ R: set of labelled transitions
 + $M, s |= ¬ϕ ⇐⇒ M, s 6|= ϕ$
 + $M, s |= ϕ ∨ ψ ⇐⇒ M, s |= ϕ or M, s |= ψ$
 + $M, s |= ϕ ∧ ψ ⇐⇒ M, s |= ϕ and M, s |= ψ$
-+ $M, s |= <α>ϕ ⇐⇒$ for some t, $(s, t) ∈ [[α]]^M$ and $M, t |= ϕ$
++ $M, s |= <α>ϕ ⇐⇒$ there is a $t ∈S$ such that $R_αst$ and $(M,t) |= φ$
 + $M, s |= [α]ϕ ⇐⇒$ for all t with $(s, t) ∈ [[α]]^M$ it holds that $M, t |= ϕ$
 
 
