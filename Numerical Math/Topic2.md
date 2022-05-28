@@ -28,7 +28,7 @@ for λ ≪ 0.
    e.g.:
    + Initialize `y0 = [pi;1]`
    + Set initial time `t0 = 0` and final time `tf` (not provided in this example)
-5. Solve using `ode45(f,[t0,tf],y0)`
+5. Solve using `ode45(f,[t0,tf],y0)` (or ODE78, ODE23 etc.. up to question. If nothing required just use ODE45)
 
 ## From Exercise2:
 + Bootstrapping multistep methods: For the question requires Adams-Bashforth method but doesn't assign which RK should use: choose the Runge-Kutta method which has the same **local error**. e.g.: 2-stage AB method (local error $O(h^3)$) -> choose Ralston's RK2  (local error $O(h^3)$)
