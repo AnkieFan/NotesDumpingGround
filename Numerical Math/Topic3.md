@@ -15,5 +15,5 @@ All the needed formulas are in the formula sheet.
 ## From exercise 3:
 In calculating error bound: 
 + given points: $x_0,x_1,x_2,...,x_n$ n is number-1, which is also 'n' in error bound formula.
-+ $f^4(x)$ is $f'''(x)$
++ $f^{(4)}(x)$ is $f'''(x)$
 
