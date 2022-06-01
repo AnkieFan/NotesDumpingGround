@@ -1,5 +1,4 @@
 # Testing
-**Test-first programming**: Write tests before you write code
 
 ## Partitioning/systematic test
 1. Divide the input space into subdomains
@@ -25,6 +24,9 @@
   + **Rerun** tests after every code changes
 + Regression testing: running **all** your tests after every change
 + **Automated regression testing** to keep bugs from coming back
+
+### **Test-first programming**: Write tests before you write code
++ ! not Automated regression testings
 
 ## First question answer model:
 
