@@ -34,5 +34,4 @@ The cyber dumping ground of Ankie's notes. *English & Chinese mixed.*
   4. [Topic 4:Differentiation and Integration](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/Topic4.md)
   5. Just practice to use the formulas on formula sheet. Especially Legendre polynomials, Chebshev polynomials and Fourier Series, Discrete Fourier Transform.
   6. Just practice to use the formulas on formula sheet. Especially Iterative Methods and Eigenvalues.
-  #### Matlab Assignments:
-  [Codes and questions](https://github.com/AnkieFan/NotesDumpingGround/tree/main/Numerical%20Math/matlabAssign)
+  #### Matlab Assignments: [Codes and questions](https://github.com/AnkieFan/NotesDumpingGround/tree/main/Numerical%20Math/matlabAssign)
