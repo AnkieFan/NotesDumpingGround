@@ -29,7 +29,7 @@ The cyber dumping ground of Ankie's notes. *English & Chinese mixed.*
   These notes are only for getting marks in exam, not for understanding everything.
   Advice for exam: If you want pass, you only need to know how to put the numbers into the formulas on formula sheet. Don't have to understand why.
   1. [Topic1](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/Topic1.md)
-  2. [Topic 2: ODE](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/Topic2.md)
+  2. [Topic 2: ODE, including the answer model of Matlab question](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/Topic2.md)
   3. [Topic 3: Polynomial Interpolation](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/Topic3.md)
   4. [Topic 4:Differentiation and Integration](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/Topic4.md)
   5. Just practice to use the formulas on formula sheet. Especially Legendre polynomials, Chebshev polynomials and Fourier Series, Discrete Fourier Transform.
