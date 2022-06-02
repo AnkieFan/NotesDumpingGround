@@ -72,3 +72,6 @@ R: set of labelled transitions
 
 
 $[[α]]^M$: a→M 图里的箭头
+
+## From exercise:
++ [a]p: 如果S没有任何a的关系，这句话始终成立

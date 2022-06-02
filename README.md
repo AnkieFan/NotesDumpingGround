@@ -3,8 +3,8 @@ The cyber dumping ground of Ankie's notes. *English & Chinese mixed.*
 
 ## Rules:
 ***1. Daniël's review is not allowed.***  
-***<big> 2. Daniël's judgement is not allowed.<big>***  
-***<big> 3. Daniël's comment is not allowed.<big>***
+***<big> 2. Daniël's judgement is not allowed.<small>***  
+***<big> 3. Daniël's comment is not allowed.<small>***
 
 ## Period 4:
 ### Data Sturcture and Algorithm
@@ -16,13 +16,22 @@ The cyber dumping ground of Ankie's notes. *English & Chinese mixed.*
   
 ## Period 5:
 ### Software Engineer:
-  1. [lecture 1](https://github.com/AnkieFan/NotesDumpingGround/blob/main/SE/lec1.md)
-  2. [lecture 2](https://github.com/AnkieFan/NotesDumpingGround/blob/main/SE/Lec2.md)
+  Notes for the exam:
+  1. [lecture 1](https://github.com/AnkieFan/NotesDumpingGround/blob/main/SE/Lec1_exam.md)
 ### Logic:
+  Too many pictures and symbols for notes, so I only have these
   1. [lecture 1](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Logic/lec1.md)
   2. [lecture 2: semantic tableaux](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Logic/Lec2.md)
-  3. [lecture 3: proof](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Logic/Lec3.md)
+  3. [lecture 3: natural deduction](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Logic/Lec3.md)
+  4. [Lecture 8: PDL (for the exam)](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Logic/Lec8.md)
+  
 ### Numerical Mathematics:
-  1. [Lecture 1](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/Lec4_5.md)
-  2. [Tutorial 1 + RK method in topic 2](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/Lec4_6.md)
-  3. [Linear](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/Lec4_7.md)
+  These notes are only for getting marks in exam, not for understanding everything.
+  Advice for exam: If you want pass, you only need to know how to put the numbers into the formulas on formula sheet. Don't have to understand why.
+  1. [Topic1](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/Topic1.md)
+  2. [Topic 2: ODE, including the answer model of Matlab question](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/Topic2.md)
+  3. [Topic 3: Polynomial Interpolation](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/Topic3.md)
+  4. [Topic 4:Differentiation and Integration](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/Topic4.md)
+  5. Just practice to use the formulas on formula sheet. Especially Legendre polynomials, Chebshev polynomials and Fourier Series, Discrete Fourier Transform.
+  6. Just practice to use the formulas on formula sheet. Especially Iterative Methods and Eigenvalues.
+  #### Matlab Assignments: [Codes and questions](https://github.com/AnkieFan/NotesDumpingGround/tree/main/Numerical%20Math/matlabAssign)
