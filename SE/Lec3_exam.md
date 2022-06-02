@@ -27,7 +27,7 @@ commit snapshot (**staging area**)
 ![DAG](img/DAG.png)
 
 ## Visual control in exam:
-To know hot to read `git status`
+To know how to read `git status`
 + File in remote:
   + `.class` files: Probably in .gitignore. If it is in repositories: committed and up to dated
   + `.java`, `.md` etc. flies: In repositories: committed and up to dated
