@@ -72,7 +72,7 @@ answer. 计算过程中保留更精确的小数位数。
   
 
 ## Note from Exercise 1:
-+ It is more accurate to add the smallest terms first.
++ It is more accurate to add the smallest terms first. 多步计算的时候先算误差小的，这样能减少整体误差
   e.g.: 1/1+1/4+1/9+....+1/10000  is more accurate than 1/10000+...+1/9+1/4+1/1
 + Secant Method和Newton的converge条件都是 $|p_n-p_{n-1}| < 精度$，和$f(p_n)$没关系
 + Secant method: when given interval's length is large than 1, we can use bisection method first to find a [n,n+1] to speed converge. secant method如果区间长度大于1了可以先用bisection找一个1的区间，再用secant
