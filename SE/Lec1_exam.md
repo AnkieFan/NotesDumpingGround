@@ -3,7 +3,8 @@
 ## Partitioning/systematic test
 1. Divide the input space into subdomains
 2. Choose one test case from each subdomain (partitions)
-
++ boundaries: Bugs often occur at boundaries between subdomains e.g.: 0
+  + Put boundaries to be a single test
 
 ## Test suite
 + Full Cartesian product: Every legal combination of the partition dimensions is covered by one test case
@@ -47,3 +48,9 @@
    `assertTrue(testedMethod("tested object").equals("real answer"));`
     `assertFalse(!testedMethod("tested object").equals("real answer"));`
     
+
+## From assignment 1:
++ Partitions are part of the overall testing strategy for a method.
+  + e.g.: Partition of a parameter should be in Test.java
++ @Test :  before a JUnit test method
++ The comment “covers a < b”: before a JUnit test method

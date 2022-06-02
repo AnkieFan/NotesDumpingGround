@@ -3,8 +3,8 @@ The cyber dumping ground of Ankie's notes. *English & Chinese mixed.*
 
 ## Rules:
 ***1. Daniël's review is not allowed.***  
-***<big> 2. Daniël's judgement is not allowed.<big>***  
-***<big> 3. Daniël's comment is not allowed.<big>***
+***<big> 2. Daniël's judgement is not allowed.<small>***  
+***<big> 3. Daniël's comment is not allowed.<small>***
 
 ## Period 4:
 ### Data Sturcture and Algorithm
