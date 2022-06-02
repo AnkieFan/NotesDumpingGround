@@ -23,7 +23,7 @@ for λ ≪ 0.
    f = (t,y) [y(0)'; y(1)']
    e.g.: y = [θ,w], f(t,y) = y' = [θ',w'], θ' = w, w' = 0 - ρ sin(θ) - δθ' =  0 - ρ sin(θ) - δw
         Grammar in matlab: because y = [0,w], y(0) is 0, y(1) is w
-        `f = (t,y) [y(1); 0 - ρ sin(y(θ)) - δy(1)]`
+        `f =@(t,y) [y(1); 0 - ρ sin(y(0)) - δy(1)]`
 4. (If provided) initialize:
    e.g.:
    + Initialize `y0 = [pi;1]`
