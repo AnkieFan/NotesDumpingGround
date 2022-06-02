@@ -40,7 +40,7 @@ A relationship to show: classifiers could be either linked to each other or comb
 + **Composition**: The **containing** object is responsible for the creation and life cycle of the **contained** object
   + e.g.: message queues is contained in mail box
   + Mailbox <- MessageQueue
-  + A -> B = A owns B 
+  + A -> B = **B** owns **A** 
 + **Dependency**: A--->B is A uses B
   + A's object uses B's variables
   + A's method uses B's objects
