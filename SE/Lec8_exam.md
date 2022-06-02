@@ -1,5 +1,18 @@
 # Refactoring
 
+## Technical Debt:
+Reasons:
+1. Business pressure: time limitation
+2. Lack of understanding of the consequences of technical debt
+3. Failing to combat the strict coherence of components: the project is a single module
+4. Lack of tests
+5. Lack of documentation
+6. Lack of interaction between team members
+7. Long-term simultaneous development in several branches
+8. Delayed refactoring: the project's requirements are constantly changing
+9. Lack of compliance monitoring: everyone codes with their own style
+10. Incompetence
+
 ## Code Smells:
 ### Bloaters
 + Long method: more than 10 lines
@@ -25,3 +38,6 @@
 + Speculative Generality: unused class, method, field or parameter
 ### Couplers
 + Feature Envy: A method accesses the data of another object more than its own data.
++ Inappropriate Intimacy: One class uses the internal fields and methods of another class.
++ Message Chains: In code you see a series of calls resembling $a->b()->c()->d()$
++ Middle Man: If a class performs only one action, delegating work to another class, why does it exist at all?
