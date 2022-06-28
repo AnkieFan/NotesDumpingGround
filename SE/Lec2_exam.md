@@ -56,3 +56,15 @@ Good software should be:
 + Object: data structure with value in memory and unique id
 + Class: extensible code template
 + Modelling **state** first
+
+
+## GRASP principles:
++ information expert
++ creator
++ low coupling
++ controller
++ high cohension
++ polymorphism
++ pure fabrication
++ indirection
++ protected variations

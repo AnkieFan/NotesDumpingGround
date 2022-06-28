@@ -9,7 +9,7 @@ e.g.: $\int_1^3 xlogx dx$, n=4
 
 i|0|1|2|3
 ---|:---:|:---:|:---:|:---:|
-$x_{1+1/2}$|1.25|1.75|2.25|2.75
+$x_{i+1/2}$|1.25|1.75|2.25|2.75
 $f(x_{i+1/2})$|0.2783|0.9783|1.8246|2.7819
     
 3. Approximation:
@@ -25,10 +25,14 @@ $f(x_i)$|0.0000|0.6082|1.3863|2.2907|3.2958
    $T_4(f;1,3) = h(1/2f(x_0)+f(x_1)+...+f(x_{n-1})+1/2f(x_n)) =0.5 × (1/2 ×0.0000 + 0.6082 + 1.3863 + 2.2907 + 1/2 ×3.2958) = 0.5 × 5.9333 = 2.9666$
 
 **Simpson’s rule**
-2.  Table of function values $f(x_i)$ for i = 0,..., n
+2.  Table of function values $f(x_i)$ for i = 0,..,n
    Same with T
 3. Approximation:
    $S_4(f;1,3) = 1/3*h(f(x_0)+4f(x_1)+2f(x_2)+4f(x_3)+f(x_4)) = 0.5 ×1/3(0.000000 + 4×0.608197 + 2×1.386294 + 4×2.290727 + 3.295837)= 0.5 × 1/3 × 17.664124 = 0.5 × 5.888041 = 2.944021$
    
 
-
+## From Exercise 4:
++ Backward-difference formulae can be obtained by taking h negative.
++ If the table of functon values f(a) to f(b) are given but still requir Midpoint Rule: do not use f(a) and f(b), use other values to calculate
++ T,S,M的角标n是计算次数，h = (b-a)/n
++ 把要求的区间分割：用Adaptive trapezoid rule算几段的误差，然后第一章里提到过先算误差小的会减少整体误差，先算误差小的
