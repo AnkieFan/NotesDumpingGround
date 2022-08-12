@@ -1,0 +1,4 @@
+**Score: 22/30**
+
+Comments:
+Very nice way of putting Account for the different types of users in the UML diagram. The information to distinguish between In Restaurant, Home Delivery and Take-Away are missing. The fact that OrderingSystem and User are both implementing Web interface is weird: since the User "objects" would not behave the same as the Web objects. There are some missing links: between kitchen and order, between kitchen and delivery module. Also there is no link to the Pricing that the different resaurants could implement themselves. Last remark: the Sequence diagrams and one of the UML are very hard to read, instead of generating from Intellij, try next time to take important features and show them in the diagrams.
