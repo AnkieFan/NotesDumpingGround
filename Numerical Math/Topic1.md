@@ -10,8 +10,8 @@
 Error computation:
 p* is approximation of p
 
-Absolute error: |p∗ − p|∣p∗−p∣
-Relative error: |p∗ − p|/|p|∣p∗−p∣/∣p∣
+Absolute error: |p∗ − p|
+Relative error: |p∗ − p|/|p|
 
 ## arithmetic
 ### rounding arithmetic

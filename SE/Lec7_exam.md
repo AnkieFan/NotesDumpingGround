@@ -46,7 +46,7 @@ To localize the bug and its cause, you can use the scientific method:
 2. Hypothesize
 3. Experiment
 4. Repeat
-
+---
 1. Study the Data:
    + Stack trace from an exception
    + Test input that causes the bug
