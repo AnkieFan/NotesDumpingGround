@@ -1,13 +1,14 @@
 # NotesDumpingGround
 The cyber dumping ground of Ankie's notes. *English & Chinese mixed.*
 
+# Year 1:
 ## Period 4:
 ### Data Sturcture and Algorithm
   
   #### Code Assignments(Full marks):
   + [Lab 5: Graph & Graph Traversal](https://github.com/AnkieFan/NotesDumpingGround/tree/main/DSA/lab5/src)
   + [Lab 6: Greedy & String Pattern Matching](https://github.com/AnkieFan/NotesDumpingGround/tree/main/DSA/lab6/src)
-  + [Minimum Spanning Tree](https://github.com/AnkieFan/NotesDumpingGround/tree/main/DSA/MST/src)
+  + [Minimum Spanning Tree but very stupid](https://github.com/AnkieFan/NotesDumpingGround/tree/main/DSA/MST/src)
   
 ## Period 5:
 ### Software Engineer:
