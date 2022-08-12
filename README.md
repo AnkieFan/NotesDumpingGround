@@ -4,7 +4,6 @@ The cyber dumping ground of Ankie's notes. *English & Chinese mixed.*
 # Year 1:
 ## Period 4:
 ### Data Sturcture and Algorithm
-  
   #### Code Assignments(Full marks):
   + [Lab 5: Graph & Graph Traversal](https://github.com/AnkieFan/NotesDumpingGround/tree/main/DSA/lab5/src)
   + [Lab 6: Greedy & String Pattern Matching](https://github.com/AnkieFan/NotesDumpingGround/tree/main/DSA/lab6/src)
@@ -12,8 +11,18 @@ The cyber dumping ground of Ankie's notes. *English & Chinese mixed.*
   
 ## Period 5:
 ### Software Engineer:
-  Notes for the exam:
-  1. [lecture 1](https://github.com/AnkieFan/NotesDumpingGround/blob/main/SE/Lec1_exam.md)
+  #### Notes for the exam:
+  1. [lecture 1: Testing](https://github.com/AnkieFan/NotesDumpingGround/blob/main/SE/Lec1_exam.md)
+  2. [lecture 2: UML](https://github.com/AnkieFan/NotesDumpingGround/blob/main/SE/Lec2_UML.md)
+  3. [lecture 2: Good Softwear, Agile, OOP](https://github.com/AnkieFan/NotesDumpingGround/blob/main/SE/Lec2_exam.md)
+  4. [lecture 3: Version Control](https://github.com/AnkieFan/NotesDumpingGround/blob/main/SE/Lec3_exam.md)
+  5. [lecture 4: Design Pattern, SOLID, Software Development Process Management](https://github.com/AnkieFan/NotesDumpingGround/blob/main/SE/Lec4_exam.md)
+  6. [lecture 5: Specifications](https://github.com/AnkieFan/NotesDumpingGround/blob/main/SE/Lec5_exam.md)
+  7. [lecture 6: Software architecture](https://github.com/AnkieFan/NotesDumpingGround/blob/main/SE/Lec6_exam.md)
+  8. [lecture 7: Mutability and Debugging](https://github.com/AnkieFan/NotesDumpingGround/blob/main/SE/Lec7_exam.md)
+  9. [lecture 8: Refactoring](https://github.com/AnkieFan/NotesDumpingGround/blob/main/SE/Lec8_exam.md)
+  #### Group Assignments: [Assignments](https://github.com/AnkieFan/NotesDumpingGround/blob/main/SE/Assignments)
+
 ### Logic:
   Too many pictures and symbols for notes, so I only have these
   1. [lecture 1](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Logic/lec1.md)

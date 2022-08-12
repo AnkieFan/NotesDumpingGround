@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Create User</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    
+  <body>
+
+    <h2>Create order</h2>
+    <form action="/order" method="post">
+
+      <div>
+
+        <label for="pizzas"><strong>PizzaList</strong></label>
+        <input type="text" placeholder="Enter pizza id" name="pizzas" required> <br />
+
+        <label for="takeaway"><strong>Takeway</strong></label>
+        <input type="text" placeholder="YES or NO?" name="takeaway" required> <br />
+
+        <label for="payment_type"><strong>Payment</strong></label>
+        <input type="text" placeholder="payment_type" name="payment_type" required> <br />
+
+        <label for="customer_id"><strong>Customer_ID</strong></label>
+        <input type="number" placeholder="customer_id" name="customer_id" required> <br />
+
+        <label for="note"><strong>Note</strong></label>
+        <input type="text" placeholder="note" name="note" required> <br />
+          
+        <label for="street"><strong>Street</strong></label>
+        <input type="text" placeholder="street" name="street" required> <br />
+
+        <label for="city"><strong>City</strong></label>
+        <input type="text" placeholder="city" name="city" required> <br />
+
+        <label for="country"><strong>Country</strong></label>
+        <input type="text" placeholder="country" name="country" required> <br />
+
+        <label for="zipcode"><strong>Zipcode</strong></label>
+        <input type="text" placeholder="zipcode" name="zipcode" required> <br />
+
+        <button type="submit">Create</button> <br />
+
+      </div>
+      
+    </form>
+
+  </body>
+
+</html>
