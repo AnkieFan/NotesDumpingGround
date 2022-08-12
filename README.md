@@ -1,15 +1,10 @@
 # NotesDumpingGround
 The cyber dumping ground of Ankie's notes. *English & Chinese mixed.*
 
-## Rules:
-***1. Daniël's review is not allowed.***  
-***<big> 2. Daniël's judgement is not allowed.<small>***  
-***<big> 3. Daniël's comment is not allowed.<small>***
-
 ## Period 4:
 ### Data Sturcture and Algorithm
   
-  #### Code Assignments:
+  #### Code Assignments(Full marks):
   + [Lab 5: Graph & Graph Traversal](https://github.com/AnkieFan/NotesDumpingGround/tree/main/DSA/lab5/src)
   + [Lab 6: Greedy & String Pattern Matching](https://github.com/AnkieFan/NotesDumpingGround/tree/main/DSA/lab6/src)
   + [Minimum Spanning Tree](https://github.com/AnkieFan/NotesDumpingGround/tree/main/DSA/MST/src)
@@ -34,4 +29,4 @@ The cyber dumping ground of Ankie's notes. *English & Chinese mixed.*
   4. [Topic 4:Differentiation and Integration](https://github.com/AnkieFan/NotesDumpingGround/blob/main/Numerical%20Math/Topic4.md)
   5. Just practice to use the formulas on formula sheet. Especially Legendre polynomials, Chebshev polynomials and Fourier Series, Discrete Fourier Transform.
   6. Just practice to use the formulas on formula sheet. Especially Iterative Methods and Eigenvalues.
-  #### Matlab Assignments: [Codes and questions](https://github.com/AnkieFan/NotesDumpingGround/tree/main/Numerical%20Math/matlabAssign)
+  #### Matlab Assignments (Full marks): [Codes and questions](https://github.com/AnkieFan/NotesDumpingGround/tree/main/Numerical%20Math/matlabAssign)
