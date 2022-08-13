@@ -3,6 +3,10 @@ The cyber dumping ground of Ankie's notes. *English & Chinese mixed.*
 
 # Year 1:
 ## Period 4:
+### Linear Algebra
+I recommend listening to MIT's Linear Algebra course (18.065 by Gilbert Strang). You can learn from him in a week and pass this course with at least 8.
+Notes: [Linear Algebra](https://github.com/AnkieFan/NotesDumpingGround/tree/main/LinearAlgebra/NotesFromMITCourse.pdf)
+
 ### Data Sturcture and Algorithm
   #### Code Assignments(Full marks):
   + [Lab 5: Graph & Graph Traversal](https://github.com/AnkieFan/NotesDumpingGround/tree/main/DSA/lab5/src)
