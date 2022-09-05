@@ -1,7 +1,7 @@
 # Databases
 
 DB：database 数据库 在硬盘中以文件形式存在
-DBMS： Database Managenebt System 数据库管理系统 Mysql oracle 
+DBMS： Database Management System 数据库管理系统 Mysql oracle 
 SQL：结构化查询语言 是一门通用的语言 属于高级语言
          SQL语句在执行的时候 内部进行编译再执行sql（由DBMS完成）
 DBMS(执行） -SQL - DB
@@ -12,6 +12,7 @@ DBMS(执行） -SQL - DB
  
 字符串：varchar 可变字符串
 long类型： bigint
+UNSIGNED: double the positive range
  
 DQL数据查询语言: 查询语句 select语句都是DQL
 DML数据操作语言： insert/delete/update 对表中数据进行增删改
