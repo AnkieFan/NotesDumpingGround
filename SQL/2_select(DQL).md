@@ -164,7 +164,7 @@ having: having是对分组之后的数据进行再次过滤
 当一条sql语句没有group by的话，整张表的数据自成一组。
 
 e.g: 找出每个工作岗位的最高薪资：
-select job,max(sal) as maxsal from emp group by job;
+`select job,max(sal) as maxsal from emp group by job;`
 当后面有group by的时候 select后面只能跟分组函数与参加分组的字段
 如果有其他的字段：Oracle直接报错 mysql中随机抽取字段中元素（无意义）
 

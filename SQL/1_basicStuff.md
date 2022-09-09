@@ -51,3 +51,10 @@ Create Retrieve Update Delete
 6. 查看创建表的时候使用的sql语句： show create table xxxxxx;
 7. 查看当前库中表：show tables;
 查看其他库中表: show tables from xxxxxxx;
+
+## Notations
++ Entity: 表格
++ Cell: 一个格子
++ Field: 列/ a property of an entity
++ Row/record: 一行数据
++ Result set
