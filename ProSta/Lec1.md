@@ -19,12 +19,12 @@ $C = A_1 \cap A_2 \cap ... A_{10} = \cap_{j=1}^{10} A_j$
 ## Sampling without replacement
 + Once chosen cannot be chosen again
 + without replacement, order matters
-+ Possible outcomes: $n(n-1)(n-2)...(n-k+1)$
++ Possible outcomes: $n(n-1)(n-2)...(n-k+1) = \frac{n!}{(n-k)!}$ (is equal to $A^n_k$)
 
 ## Binomial Coefficient Formula
 + With replacement, order doesn't matter
 + For $k\leq n$, we have 
-  $$\begin{pmatrix} n \\ k \end{pmatrix} = \frac{n(n-1)...(n-k+1)}{k!} = \frac{n!}{(n-k)!k!}$$
+  $$\begin{pmatrix} n \\ k \end{pmatrix} = \frac{n(n-1)...(n-k+1)}{k!} = \frac{n!}{(n-k)!k!}$$ (is equal to $C^n_k$)
 + For $k \leq n$, we have  $$\begin{pmatrix} n \\ k \end{pmatrix} = 0$$
 
 ## Intuition
