@@ -75,7 +75,7 @@ select ename,job from emp where job = 'SALESMAN' or job = 'MANAGER';
 select ename,job from emp where job in ( 'SALESMAN' , 'MANAGER');
 ```
 `select ename,job from emp where sal in (800,5000); `找出工资是1000或5000的人
-### in 等同于 or in后面不是区间 是值    not in：不是这几个值的
+#### in 等同于 or in后面不是区间 是值    not in：不是这几个值的
 
 ### 模糊查询 like 
 在模糊查询中：% 和 _ 
@@ -214,7 +214,8 @@ E.g: 找出每一个员工的部门名称，要求显示员工名和部门名。
  `Select e.ename,d.dname from emp e,dept d where e.deptno = d.deptno;`（sql92，以后不用 连接和过滤）
 `Select e.ename, d.dname from emp e (inner) join dept d on e.deptno = d.deptno;` sql99
 语法：
-… A (inner) join B on 连接条件 where…;
+… A (inner) join B ON 连接条件 where…;
+… A (inner) join B USING 连接条件 where…;
 99语法merit： 更清晰 表的连接条件和后来where过滤分开
 inner可省略 带inner可读性更高
 
