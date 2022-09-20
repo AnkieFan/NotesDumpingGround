@@ -26,3 +26,4 @@ E = {{a,c}, {c,d}}}
 + edge e **joins** u and v
 + weights/labels: distance, time...
 + **Path** in G: sequence of vertices $(v_1,v_2,...,v_l)$, s.t.: $\forall i = 1,2,...,l-1: {v_i,v_{i+1}} \in E$, and $v_1 \neq v_i \forall i \neq j$
++ A **clique** is a collection of vertices in an undirected graph G such that every two different vertices in the clique are nearby, implying that the induced subgraph is complete.
