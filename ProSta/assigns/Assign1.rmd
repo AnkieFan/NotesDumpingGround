@@ -1,0 +1,52 @@
+---
+title: "Assign1"
+author: "Ankie Fan"
+date: "2022-09-16"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
+---
+# Assignment 1
+## Question 1
+k people come to the theater  
+Let X be the number of coming people  
+$X\sim~ Bin(n,p)$, where n = 100, p = 0.5, k = 50, 51, 52... 100  
+$P(X = k) = \begin{pmatrix} n \\ k \end{pmatrix} p^k(1-p)^{n-k}$  
+$P(X > 50) = \sum^{100}_{k = 51}P(X = k) \approx 0.46$  
+  
+In python:
+```
+from scipy import stats
+import numpy as np
+
+p = stats.binom.pmf(np.arange(51,100,1),100,0.5)
+p.sum()
+```
+In R:  
+In R `pbinom` calculate $P(X \leq 50)$. So we use 1 to subtract it.  
+```{r}
+1-pbinom(50,100,0.5)
+```
+Or we can also think in this way:  
+Since the possibility of a person will come is 50%, the possibility of no person comes and 100 people come should be the same. So we have:  
+$P(X=0)=P(X=100),P(X=1)=P(X=99), ... ,P(X=49)=P(X=51)$ (a)  
+So we have:  
+$P(X=0) + P(X=1) + ... +P(X=100) = P(X=50)+2(P(X=51)+P(X=52)+...+P(X=100)) = P(X=50)+2P(X>50)$  
+And:  
+$P(X=50) = \begin{pmatrix} 100 \\ 50 \end{pmatrix} 0.5^{50}(1-0.5)^{50}$  
+Since the total possibility of X = 0 to X = 100 should be 1,  
+$P(X>50) = (1 - P(X=50))/2$  
+
+Implementation in R:
+```{r}
+(1-dbinom(50,100,0.5))/2
+```
+This question is just like, there are 100 coins, what's the possibility that there are more than 50 coins are head.  
+
+## Question 2
+1. X is throwing a dice, Y is throwing a same dice. X and Y are independent and identically distributed.  
+2. X is throwing a dice, Y is draw one card from the 52 cards. X and Y are independent and not identically distributed.  
+3. In a group project, X is my grade, Y is my group mate's grade. X and Y are dependent and identically distributed.
+4. X is drawing one card from the 52 cards, Y is drawing one card from 51 cards without the X one. X and Y are dependent and not identically distributed.
