@@ -6,6 +6,9 @@ A path in a graph $G=(V, E)$ is a sequence of vertices $(v_1,v_2,v_3,...,v_k)$ o
   + all $v_1, v_2,...,v_k$ are different (ie, $\forall i,j, i \neq j, v_i \neq v_j$)
 vertices不能重复，起点重点不一样
 
+## Circuit
+
+
 ## Walk
 - sequence of vertices ($v_1, v_2, v_3, ... , v_{k-1}, v_k$) of V such that:
   - $\forall i=1,2,...,k-1: v_i,v_{i+1} \in E$
