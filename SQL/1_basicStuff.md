@@ -23,11 +23,11 @@ DCL数据控制语言: grant授权 revoke撤销权限
 使用步骤：
 一 登录 ： mysql -uroot -p12345687
 二 查看有哪些数据库（不是SQL语句，是mysql命令） show databases;
-三 创建数据库 create databases xxxxxxxx;（不是SQL语句，是mysql命令）
+三 创建数据库 create database xxxxxxxx;（不是SQL语句，是mysql命令）
 四 使用xxxxx数据：use xxxxxxx;（不是SQL语句，是mysql命令）
 五  查看当前数据库中的表 show tables; （不是SQL语句，是mysql命令）
 六 初始化数据 source +文件路径; 
-删除数据库： drop database xxxxxxxx;
+删除数据库： drop database xxxxxxxx; DROP DATABASE IF EXISTS xxxxx;
  
 当一个文件的扩展名是.sql，并且该文件中编写了大量的sql语句，我们称这样的文件为sql脚本
 
