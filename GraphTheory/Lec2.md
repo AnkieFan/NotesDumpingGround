@@ -14,7 +14,7 @@ vertices不能重复，起点重点不一样
   - $\forall i=1,2,...,k-1: v_i,v_{i+1} \in E$
 
 ### Closed
-A walk W = ($_1,v_2,...,v_k$) is called a **closed** walk if $v_1 = v_k$
+A walk W = ($v_1,v_2,...,v_k$) is called a **closed** walk if $v_1 = v_k$
 A closed walk w = ($v_1, v_2, ..., v_k$) is called a **cycle** if 
   + ($v_1, v_2, ..., v_k-1$) is a path
   + and no edge appears twice
