@@ -1,0 +1,75 @@
+---
+title: "assign3.rmd"
+author: "Ankie Fan"
+date: "2022-10-08"
+output: html_document
+---
+
+## Question 1
+PDF: $f(x) = 42x^5(1-x) = 42x^6-42x^7$  
+Integrate (CDF): $F(x) = 7x^6-6x^7$  
+Assume $m$ is the medium  
+We have $P(x \leq m) = 0.5$, which is to find $\int^m_0 f(x)dx = 0.5$  
+Equals to find $m$ where $7m^6-6m^7 = 0.5$  
+Equals to find root of $7m^6-6m^7 - 0.5$ between 0 and 1     
+```{r}
+g = function(x)
+  7*x^6-6*x^7-0.5
+m = uniroot(g,c(0,1),tol=0.0001)$root
+m
+```
+The medium should be around 0.7715  
+Graph:  
+The area enclosed by the PDF curves to the left and right of the median and the x-axis are equal.  
+```{r}
+pdf = function(x) {42*x^5*(1-x)}
+plot(pdf,0,1)
+abline(v = m)
+```
+
+## Question 2
+Since every time the ball hits one of the nails, it bounces either left or right randomly. The probability of a ball going to left or right are all $\frac{1}{2}$. So the probability of the ball taking a certain path during its fall follows a binomial distribution.  
+If the ball hits $n$ nails on its downward journey, which slot it finally ends up in can be considered as the sum of $n$ random variables. And as the central limit theorem says that the sum of $n$ random variables approaches a normal distribution as $n$ increases. Since there are enough many balls in this case, which also means we have enough ending slot results (random variables), we can expect that the distribution in our slots will be normal. 
+
+Simulation:  
+$k$ balls, 20 slots  
+```{r}
+par(mfrow=c(2,3)) 
+
+for(k in c(1000,2000,5000,10000,20000, 50000)){
+d<- NA
+for(i in 1:k){
+  a=rbinom(20,1,0.5)
+  b=sum(a)
+  d=c(d,(b))
+}
+d = d[-which(is.na(d))]
+cat("When k is",k,"\n")
+cat("Mean: ",mean(d),"\n")
+cat("Standard derivation:",var(d),"\n")
+hist(d,breaks =50,xlab ="",main = paste('k = ',k,sep=''))
+}
+```
+  
+10000 balls, $n$ slots:  
+```{r}
+par(mfrow=c(2,2)) 
+
+for(n in c(10, 20, 40, 100)){
+d<- NA
+for(i in 1:10000){
+  a=rbinom(n,1,0.5)
+  b=sum(a)
+  d=c(d,(b))
+}
+d = d[-which(is.na(d))]
+cat("When n is",n,"\n")
+cat("Mean: ",mean(d),"\n")
+cat("Standard derivation:",var(d),"\n")
+hist(d,breaks =50,xlab ="",main = paste('n = ',n,sep=''))
+}
+```  
+  
+According to simulation, the parameter of a Quincunx's normal distribution with enough balls and $n$ slots should be:  
+$\mu \approx \frac{n}{2}$    
+$\sigma \approx \frac{n}{4}$  

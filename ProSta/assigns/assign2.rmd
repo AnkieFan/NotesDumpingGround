@@ -1,0 +1,61 @@
+---
+title: "Assign2"
+author: "Ankie Fan"
+date: "2022-10-02"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
+---
+# Question 1
+$X \sim Beta(a,b), a = 6, b = 2$  
+$f(x) = cx^5(1-x), \text{for } 0<x<1$   
+
+### (a)  
+$F(x) = \int_{0}^{1} f(x) dx = \frac{c*1^6}{6}-\frac{c*1^7}{7} = 1$  
+$\frac{c}{6} -\frac{c}{7} = 1$  
+$c = 42$  
+
+### (b)  
+$P(0.2<X<0.8) = \int_{0.2}^{0.8} f(x) dx = 0.5763456$   
+```{r}
+f=function(x)
+  42*x^5*(1-x)
+integrate(f,0.2,0.8)
+```
+
+### (c)  
+$\mu = E(X) = \int_{0}^{1} xf(x) dx = 0.75$  
+```{r}
+ef=function(x)
+  42*x^6*(1-x)
+integrate(ef,0,1)
+```
+$var(X) = E(X-\mu)^2 = 0.0280333$  
+```{r}
+vf=function(x)
+  (x-0.75)^2*42*x^5*(1-x)
+integrate(vf,0,1)
+```
+# Question 2
+### (a)
+Assume PDF: $f = \frac{3}{500}(10x-x^2), for 0<x<10$  
+Absolute max value $a = 0.15$ when $x = 5$  
+$P (3 \leq X < 6) \approx 0.9598$  
+
+```{r}
+g=function(x)
+  3/500*(10*x-x^2)
+xs <- runif(0:10000, 3, 6)
+ys <- runif(0:10000, 0, 0.15)
+no <- 0
+for (i in seq_along(xs)){
+  if(ys[i]<=g(xs[i])){
+    no <- no+1
+  }
+}
+no/10000
+```
+### (b)
+The number of points should impact on approximation accuracy.
