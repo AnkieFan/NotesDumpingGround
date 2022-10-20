@@ -7,7 +7,8 @@ A path in a graph $G=(V, E)$ is a sequence of vertices $(v_1,v_2,v_3,...,v_k)$ o
 vertices不能重复，起点终点不一样
 
 ## Circuit
-
++ Length >= 3
++ closed trail (verteice can be covered multiple time)
 
 ## Walk
 - sequence of vertices ($v_1, v_2, v_3, ... , v_{k-1}, v_k$) of V such that:
@@ -26,6 +27,7 @@ is a graph such that $\forall u,v \in V: {u,v} \in E$
 
 ## Length
 Length of a walk/path ($v_1, v_2, ..., v_k$) is k-1 (the number of edges)
+- trivial walk: length = 0
 ### Notation
 For a path P = ($v_1,v_2, ..., v_i, v_0, v_k$)
 + $\forall i = 1, ..., k: Pv_i$ = the path ($v_1, v_2, ..., v_i$)
@@ -42,7 +44,16 @@ For a path P = ($v_1,v_2, ..., v_i, v_0, v_k$)
   + 两个path没有相同的vertex
   + P = (u,v), P' = (v, u): P, P' are independent.
 
-## Euler Tour:
+### Theorem:
++ For a graph G = (V,E), if there's a uv-walk with length $l$, then G has one uv-path with length at most $l$
+
+## distinct $d_G(u,v)$ or $d(u,v)$
+G = (V,E), $u, v \in V$, distance between u and v is defined as the minimum length of uv path in G.
+
+### diameter diam(G)
+The largest distinct between vertices in G
+
+# Euler Tour:
 is also called an Euler walk, an Eulerian tour, and an Eulerian walk
 + A closed walk in G that cantains
   + Every edge
