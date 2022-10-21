@@ -1,5 +1,5 @@
 ---
-title: "assign3.rmd"
+title: "assign3"
 author: "Ankie Fan"
 date: "2022-10-08"
 output: html_document

@@ -45,8 +45,9 @@ E = {{a,c}, {c,d}}}
 ### Common graph:
 + Complete graph: $\forall u,v in V, u\not = {}v$, if uv are adjacent, then G is complete. 
 + Complememt $\overline{G}$: same vertices with G but for each edge of vertices u,v of G, uv is an edge of $\overline{G}$ if and only if uv is not an edge of G.
-+ bipartite graph:  a graph whose vertices can be divided into two disjoint and independent sets U and V(partite set), that is every edge connects a vertex in U to one in V. Vertex sets U and V are usually called the **parts** of the graph. 可以分为两个独立集，并且每个edge都是从一个连到另一个
-+ isomorphic: a function ϕ  from $V(G_1)$ to $V(G_2)$, such that $u_1v_1 \in E(G_1)$ iff $ϕ(u_1)ϕ(v_1) \in E(G_2)$, ϕ  is the isomorphism from $G_1$ to $G_2$
++ bipartite graph:  a graph whose vertices can be divided into two disjoint and independent sets U and V(partite set), that is every edge connects a vertex in U to one in V. Vertex sets U and V are usually called the **parts** of the graph. 可以分为两个独立集，并且每个edge都是从一个连到另一个。必须是无向图。
++ isomorphic: a function ϕ from $V(G_1)$ to $V(G_2)$, such that $u_1v_1 \in E(G_1)$ iff $ϕ(u_1)ϕ(v_1) \in E(G_2)$, ϕ  is the isomorphism from $G_1$ to $G_2$
++ planar: graph G is a planar graph if it can be drawn in theplane without edge-crossings
 
 #### Theorem:
 + If G is disconnnected, then $\overline{G}$ is connected
@@ -57,3 +58,4 @@ E = {{a,c}, {c,d}}}
   + If G and H are isomophic:
     + G is bipartite iff H is bipartite
     + G is connected iff H is connected
++ For planar graphs: |E| is small, for $|V| \geq 3, |E| \leq 3|V|-6$

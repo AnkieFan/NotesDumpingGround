@@ -1,0 +1,61 @@
+---
+title: "assign4"
+author: "Ankie Fan"
+date: "2022-10-21"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# assignment 4
+## a) Distribution:
+Binomial distribution, since the result of a play can only be a win or loss.  
+
+## b)
+Null hypothesis: the player is a fair player.  
+Distribution: $X_f \sim Bin(100, \frac{1}{37})$  
+
+## c) 
+Alternative hypothesis: the player is a cheater.  
+Distribution: $X_c \sim Bin(100, \frac{1}{20})$  
+
+## d)
+Confidence interval.
+
+## e)
+The decision rule should detect cheating players with a probability of 80%. This also means that there's 20% probability that this rule identifies cheaters as fair players. And this is Type 2 error.  
+So we have 1 - P(type 2 error) = 0.8  
+P(type 2 error) = 0.2  
+We want to find a $c$ where:  
+$P(accept \  H_0 | H_1) = P(X \leq c|p = \frac{1}{20}) = \sum^{0}_{i = c} P(X = i|p = \frac{1}{20})$  
+
+```{r}
+
+for(c in 1:100){
+  s = pbinom(c,100,0.05)
+  if (s <= 0.2){
+    cat("c = ",c)
+    cat("s = ",s)
+  }
+}
+```
+100 - 2 = 98  
+So the rule is: if a player wins 98 or more than 98 times, we can say they have 80% possibility to be a cheater.  
+
+## f)
+Significance level
+
+## g)
+The possibility should be:  
+```{r}
+1 - pbinom(2,100,1/37)
+```
+
+## h)
+Increasing the number of wins out of 100 which is used to determine cheating
+
+## i)
+$\alpha$ will increase (more fair players will be recognized as cheater)  
+$\beta$ will decrease (less cheaters will be recognized as fair players)  

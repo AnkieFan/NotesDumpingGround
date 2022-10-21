@@ -32,7 +32,7 @@ Length of a walk/path ($v_1, v_2, ..., v_k$) is k-1 (the number of edges)
 For a path P = ($v_1,v_2, ..., v_i, v_0, v_k$)
 + $\forall i = 1, ..., k: Pv_i$ = the path ($v_1, v_2, ..., v_i$)
 + $\forall i = 1, ..., k: v_iP$ = the path ($v_i, v_{i+1}, ..., v_k$)
-+ $\forall i \leq j: v_iPv_j$ = the path ($v_i, v_i+1, ..., v_0$)
++ $\forall i \leq j: v_iPv_j$ = the path ($v_i, v_i+1, ..., v_j$)
 
 ## Path
 + For $u,v \in V$, anl. **uv-path** is a path $(v_1,v_2,v_3...v_4)$ such that $u_1 = u$ and $v_1 = v$
