@@ -326,6 +326,19 @@ SELECT enam,job from emp where job = 'SALESMAN' union slect ename,job from emp w
 ```
 Union join 就是全连接
 
+## Multi-Row operators 多行操作
+(NOT) EXISTS (test for the existence of any record in a subquery)
+`SELECT employee_id, last_name, job_id, department_id FROM employees AS outer WHERE EXISTS (SELECT ’X’ FROM employees WHERE manager_id = outer.employee_id);`
+
+(NOT) IN (shorthand for multiple OR conditions)
+`SELECT first_name, last_name FROM customer WHERE customer_id NOT IN (1, 2);`
+
+ALL (ALL of the subquery values meet the condition)
+`SELECT ProductName FROM Products WHERE ProductID = ALL(SELECT ProductID FROM OrderDetails WHERE Quantity = 10);`
+
+ANY (ANY of the subquery values meet the condition)
+`SELECT ProductName FROM Products WHERE ProductID = ANY(SELECT ProductID FROM OrderDetails WHERE  Quantity = 10);`
+
 ## LIMIT (only in mySQL)
 Limit是mysql中特有的  最后执行的一个环节
 Oracle中有相同的机制rownum
