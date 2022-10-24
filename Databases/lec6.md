@@ -41,6 +41,8 @@ a valid state
     b. Another transaction inserts a new row which happens to have a value between this range. 
     c. The original range which was referred to would now become invalid
 
+#### Durability
+
 ### Multi-User Transactions
 We use locks to prevent access to data undergoing transactions
 - Write/Read Lock

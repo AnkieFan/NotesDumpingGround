@@ -17,7 +17,7 @@ Distributing computations is relatively easy, but the hard part of distributed s
 
 ### Consistency
 A consitstent view of data on all nodes of the distributed system
-一个操作同步到所有节点，都能产生相同的结果
+所有节点在同一时间具有相同的数据
 
 ### Availability
 This property demands the system to eventually answer every request, even in case of failures. 
@@ -27,7 +27,7 @@ This property demands the system to eventually answer every request, even in cas
 + The system is resilient to message losses between nodes. 
 + A partition is an arbitrary split between nodes of a system              。/, resulting in complete message loss in between. 
 + partition是节点之间的分割，partitions之间有信息损失，需要对此弥补。
-+ 根据Availablity的要求：任何潜在分区的每个节点都必须能够响应请求。
++ 系统中任意信息的丢失或失败都不会影响系统的继续运作
 
 ## Partitioning
 + Separating one table’s rows into multiple different tables

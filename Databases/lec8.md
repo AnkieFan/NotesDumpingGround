@@ -86,7 +86,7 @@ Processing of **blocks** of data that have already been stored over a period of 
   + Hadoop & MapReduce
 
 #### Stream:
-实时处理，暂存在缓存里
+实时处理，暂存在缓存里，一条一条处理
 Process data in real-time as they arrive and 
 detect conditions within a small period of time from the point of receiving the data.
   + Often in-memory
