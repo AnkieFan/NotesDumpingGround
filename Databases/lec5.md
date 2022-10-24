@@ -35,7 +35,7 @@ An entity is in 1NF iff:
 3. The order in which data is stored does not matter / i.e. tables have no repeating columns
 All of the data items in a column must mean the same thing. 
 
-### 2NF 属性完全依赖于主键
+### 2NF 数据对表的主键和候选键有依赖
 + Any non-prime attribute (i.e. attribute that is not part of any candidate key) should not be dependent on the proper subset of the table’s candidate key.
   + The data must be in First Normal Form
   + Each non key field must reference the same thing as the primary key
@@ -51,7 +51,7 @@ All of the data items in a column must mean the same thing.
 + E.g.: In table *employee*: ID, name, **dept_id**
   + Then any information in *department* cannot appear here -> can be retrieved by *dept_id*
 
-### Boyce-Codd Normal Form (BCNF)
+### Boyce-Codd Normal Form (BCNF) 对于任何函数依赖X -> A，都满足X是R的一个superkey
 + After the third normal form, the following conditions are required:
 + The database is in third normal form
 + Prime attributes should not depend on a non-prime attribute
@@ -112,12 +112,8 @@ Every node in a B+ Tree contains an array of key/value pairs:
 2. Tuple data: the actual contents of the tuple is stored in the leaf node
 
 ## Hash table indexes
-+ Very fast (average O(1)) when querying 
-for equality (= or <>)
-+ A hash table can’t help us when we want 
-to find range, use the < or > operators, 
-or speed up the ORDER BY part of the 
-clause.
++ Very fast (average O(1)) when querying for equality (= or <>)
++ A hash table can’t help us when we want to find range, use the < or > operators, or speed up the ORDER BY part of the clause.
 
 ## Indexes
 查询变快，写入修改删除变慢
