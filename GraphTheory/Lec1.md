@@ -48,6 +48,7 @@ E = {{a,c}, {c,d}}}
 + bipartite graph:  a graph whose vertices can be divided into two disjoint and independent sets U and V(partite set), that is every edge connects a vertex in U to one in V. Vertex sets U and V are usually called the **parts** of the graph. 可以分为两个独立集，并且每个edge都是从一个连到另一个。必须是无向图。
 + isomorphic: a function ϕ from $V(G_1)$ to $V(G_2)$, such that $u_1v_1 \in E(G_1)$ iff $ϕ(u_1)ϕ(v_1) \in E(G_2)$, ϕ  is the isomorphism from $G_1$ to $G_2$
 + planar: graph G is a planar graph if it can be drawn in theplane without edge-crossings
++ comflict graph: edge交叉的图
 
 #### Theorem:
 + If G is disconnnected, then $\overline{G}$ is connected
