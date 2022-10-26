@@ -1,6 +1,6 @@
 # Graph
  
-- vertices V=
+- vertices V
 - edges E
   - an edge **joins**/**connects** two vertices
 - graph G
@@ -22,7 +22,7 @@ E = {{a,c}, {c,d}}}
 + if $uv \in E$, u and v are **adjacent**
 + order: $|V|$
 + size: $|E|$
-+ edge $e \in E$ is **incident** to a vertex $v \in V$ IFF $v \in e
++ edge $e \in E$ is **incident** to a vertex $v \in V$ IFF $v \in e$
 + degree $d(v) = |{e \in E| v \in e}|$
 + $\delta(G) := min \{d(v)|v \in V\}$ minimum degree of G
 + $\Delta(G) := max \{d(v)|v \in V\}$ maximum degree of G
@@ -43,7 +43,7 @@ E = {{a,c}, {c,d}}}
   + minimum vertex cover's complement is maximum independent set它的补集是最大独立集
 
 ### Common graph:
-+ Complete graph: $\forall u,v in V, u\not = {}v$, if uv are adjacent, then G is complete. 
++ Complete graph: $\forall u,v \in V, u\not = {}v$, if uv are adjacent, then G is complete. 
 + Complememt $\overline{G}$: same vertices with G but for each edge of vertices u,v of G, uv is an edge of $\overline{G}$ if and only if uv is not an edge of G.
 + bipartite graph:  a graph whose vertices can be divided into two disjoint and independent sets U and V(partite set), that is every edge connects a vertex in U to one in V. Vertex sets U and V are usually called the **parts** of the graph. 可以分为两个独立集，并且每个edge都是从一个连到另一个。必须是无向图。
 + isomorphic: a function ϕ from $V(G_1)$ to $V(G_2)$, such that $u_1v_1 \in E(G_1)$ iff $ϕ(u_1)ϕ(v_1) \in E(G_2)$, ϕ  is the isomorphism from $G_1$ to $G_2$
