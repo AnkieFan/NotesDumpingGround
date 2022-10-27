@@ -49,9 +49,12 @@ for $x \in C$
 ## Cumulative Distribution Functions
 CDF: 是概率密度函数的积分，能完整描述一个实随机变量X的概率分布。
 CDF的定义是：$F_{X}\left( x\right) =P_{r}(X \leq x)$  
-连续型随机变量：$F_{X}\left( x\right) =P_{r}(X \leq x)=\int ^{x}_{-\infty }f_{X}\left( t\right) dt$
 
+### 函数式
+连续型随机变量：$F_{X}\left( x\right) =P_{r}(X \leq x)=\int ^{x}_{-\infty }f_{X}\left( t\right) dt$
 离散型随机变量，CDF是阶梯状的分段函数，以掷硬币为例\[F_{X}\left( x\right) =P_{r}(X \leq x)=\begin{cases}0 \ if \ x<0\\ \dfrac {1}{2}\ if \ 0\leq x<1\\ 1\ if \ x\geq 1\end{cases}\]
+
+### Theorem
 另外CDF的单调递增（不减）性质可以由它的定义和概率的性质推出: 对任意$x_1 < x_2$，总有 $P_{r}(X \leq x_1)\leq P_{r}(X \leq x_2)$,所以$F_{X}\left( x_1\right)\leq F_{X}\left( x_2\right)$
 
 ### Independence of two r.v.s
