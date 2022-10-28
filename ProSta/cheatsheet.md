@@ -103,7 +103,7 @@ Valid PDF => CDF from a to b is 1
 $\int_a^b \int_a^y f_{X,Y}(x,y)dy dxdy = \int_a^b (\int_a^y f_{X,Y}(x,y)dy) dxdy = 1$
 ### Marginal PDF 
 For x:
-$f_X(x) = \int_a^yf_{X,Y}(x,y)dy$
+$f_X(x) = \int_a^xf_{X,Y}(x,y)dy$
 ### Conditional PDF
 For all x with $f_X(x) >0$
 $f_{Y|X}(y|x) = \frac{f_{X,Y}(x,y)}{f_X(x)}$
