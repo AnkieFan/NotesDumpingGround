@@ -28,7 +28,10 @@ $E(X + Y) = E(X) + E(Y)$
 $Var(X+Y) = Var(X) + Var(Y) + 2Cov(X,Y)$
 $E(cX) = cE(X)$
 ### Law of the Unconscious Statistician (LOTUS)
-$E(g(x)) = \sum_{x} g(x) P(X=x)$
+For discrete:  
+$E(g(x)) = \sum_{x} g(x) P(X=x)$  
+For continuous:
+$E(g(x)) = \int^{\infin}_{-\infin} g(x) f_X(x)dx$
 ### Joint distribution
 Covariance:  
 $Cov(X,Y) = E((X-EX)(Y-EY)) = E(XY) - E(X)E(Y)$
