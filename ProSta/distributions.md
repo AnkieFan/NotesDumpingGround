@@ -63,7 +63,7 @@ $$
 \begin{equation}
 f(x) = 
 \begin{cases}
-\frac{1}{b-1}& \text{if a<x<b}\\
+\frac{1}{b-a}& \text{if a<x<b}\\
 0& \text{otherwise}
 \end{cases}
 \end{equation}

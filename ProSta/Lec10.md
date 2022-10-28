@@ -14,7 +14,6 @@ E.g.: coins
 $f(x_0|\theta) = (1-\theta)*\theta*\theta*\theta*\theta*(1-\theta)*\theta*\theta*\theta*(1-\theta)$
 We want to find $\theta$ where $f(x_0|\theta)$ is the max
 
-
 ## Maximum Likelihood Estimate MLE
 ### Likelihood
 Suppose that random variables $X_1,...,X_n$ have a joint density:  
