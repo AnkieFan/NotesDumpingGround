@@ -36,6 +36,7 @@ then we say that $\hat{\theta}$ is **unbiased**
 + A confidence interval for a population parameter $\theta$, is a random interval, calculated from the sample, that contains $\theta$ with some specified probability  
 + For $0 \leq a \leq 1$, let $z(\alpha)$ be the number such that the area under the standard normal density function to the right $z(\alpha) is \alpha$  
   + $P(-z(\alpha/2) \leq Z \leq z(\alpha/2))$
+  + Lower endpoint: $\overline{X}-z(\alpha / 2)$ Upper endpoint: $\overline{X}+z(\alpha / 2)$  
 ![](img/9.1.png)
 
 ## Central Limit Theorem

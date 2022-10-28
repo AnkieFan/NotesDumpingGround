@@ -100,7 +100,7 @@ p-value = $P(X \geq c|H_0)$
 ### Find valid PDF
 PDF: $f_{X,Y}(x,y)$, for $a < x < y < b$  
 Valid PDF => CDF from a to b is 1  
-$\int_a^b \int_a^y f_{X,Y}(x,y)dy dxdy = \int_a^b (\int_a^y f_{X,Y}(x,y)dy) dxdy = 1$
+$\int_a^b \int_a^y f_{X,Y}(x,y)dxdy = \int_a^b (\int_a^y f_{X,Y}(x,y)dx)dy = 1$
 ### Marginal PDF 
 For x:
 $f_X(x) = \int_a^xf_{X,Y}(x,y)dy$
@@ -109,6 +109,8 @@ For all x with $f_X(x) >0$
 $f_{Y|X}(y|x) = \frac{f_{X,Y}(x,y)}{f_X(x)}$
 
 ## Population, Sample, and Confidence Intervals
+Confidence intervals: Lower endpoint: $\overline{X}-z(\alpha / 2)$ Upper endpoint: $\overline{X}+z(\alpha / 2)$  
+
 ### Fixed parameter
 + Population mean
 + Population total N
@@ -118,6 +120,7 @@ $f_{Y|X}(y|x) = \frac{f_{X,Y}(x,y)}{f_X(x)}$
 + Sample size n
 + The variance of the sample mean
 + The estimated variance of the sample mean
+
 ### Random variables
 + Sample mean $\overline{X}$
 + The largest value in the sample
