@@ -47,3 +47,13 @@ $X = f_X^{-1}(U), U \sim U(0,1)$
   + use inverse-transform method
 + m-Erlang
   + Use convolution (sum of exponentiale) or inverse-transform method
++ Lognormal
+  1. Generate $Y \sim N(\mu,\sigma^2)$
+  2. Return $X= e^Y$
++ Normal
+  + Box and Muller method
+    + Get $U_1, U_2 \sim U(0,1)$, find X,Y such that:
+      + $X = cos(2\pi U_1)\sqrt{-2lnU_2}$
+      + $X = sin(2\pi U_1)\sqrt{-2lnU_2}$
+    + Then X and Y follows Normal distribution with $\mu = 0, \sigma^2 = 1$
+  + Polar method
