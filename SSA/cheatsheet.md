@@ -225,7 +225,7 @@ Follow the general progress in Part 2.
 + Test statistic: $t = \frac{\overline{X_1}-\overline{X_2}}{\sqrt{\frac{S_1^2}{n_1} + \frac{S_2^2}{n_2}}}$
 + dof is the first formula in Comparing Alternative System Configurations in formula sheet
 
-#### The independent t-test (pooled two-sample t-test, Equal population variance)
+#### The independent t-test (pooled two-sample t-test, Equal population variance) (NEVER APPEARED IN exercises)
 + Test statistic: $t = \frac{\overline{X_1}-\overline{X_2}}{S_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$
 + $S_p = \sqrt{\frac{((n_1-1)s_1^2(n_1) +(n_2-1)s_2^2(n_2))}{n_1+n_2-2}}$
 
