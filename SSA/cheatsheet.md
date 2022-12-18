@@ -1,0 +1,148 @@
+# Cheatsheet for doing exam questions
+
+## 1. Random number generator
+### LCG:
+$Z_i = (aZ_{i-1}+c)(mod m)$  
+a,c,m is given.  
+$Z_0$ is given. Using it recursively calculate Z until you find the loop.  
+
+### LFSR:
+$b_i = (b_{i-r}+b_{i-q})(mod 2)$
+$q,r$ is given.  
++ Step 1: turn initial integer to Binary
+  + E.g.: initialized with 42
+  + 42/2 = 21 + 0  **0**
+  + 21/2 = 10 + 1  **1**
+  + 10/2 = 5 + 0   **0**
+  + 5/2 = 2 + 1    **1**
+  + 2/2 = **1** + **0**
+  + So binary of 42: 101010 (from bottom left to top)
+  + Fill it to be 8 bit(required by question): 00101010
++ Step 2: Find the $r$th and $q$th digits counting from right to left and add them up, and then $mod 2$
+  + E.g.: q = 8: $0$, r = 3: $0$
+  + 0+0 mod 2 = 0
++ Step 3: Remove the first number from the left side
+  + E.g.: Now it should be 0101010_
++ Step 4: fill the _ with the value from Step 2
+  + E.g.: Now it should be 01010100
++ Repeat Step 2 to Step 4 until the last number is moved to the first position
++ Last: Turn this binary to be decimal integer
+
+## 2. Testing Random number generators and input distribution
+### General process
++ Step 1: Write down $H_0$ Null hypothesis: this dataset follows xxx distribution with parameters xxx = nnn
++ Step 2: Calculate the probability $p$ according to the distribution in the hypothesis
++ Step 3: Use the following data and original dataset to calculate **test statistic**
++ Step 4: Check the table to find **critical point**. DOF = number of bins-1
++ Step 5: If test statistic > critical point, we reject $H_0$
+
+### chi-square tests
++ Follow general process
++ Test statistic: $\chi^2 = \sum^k_{j=1} \frac{(N_j-np_j)^2}{np_j}$
++ n: population size
+
+### KS tests
++ Sort the original dataset from small to large
++ Calculate expected **cumulative** probability: y_actual = [1/n,2/n,3/n,...,1] (n is size of original dataset)
++ From general process Step 2 we can get a series: y_expect = cdf[x] (where x is original dataset)
++ $D^+$[i] = y_actual[i] - y_expect[i]
++ $D^-$[i] = y_expect[i+1] - y_actual[i]
++ **Test statistic**: Find the largest number in $D^+$ and $D^-$
++ Note: don't use absolute difference
+
+### Poker tests
++ Follow general process
++ probability in Step 2 is from table in formula sheet
++ **Test statistic**: chi-square
+
+### Runs tests (Not using critical point)
++ a = the number of numbers above the mean
++ b = the number of numbers below the mean
++ $\mu_r = \frac{2ab}{n} + 0.5$
++ $\sigma^2_r = \frac{2ab(2ab-n)}{n^2(n-1)}$
++ Test statistic: $R = \frac{r-\mu_r}{\sqrt{\sigma^2_r}}$
++ Region of acceptance: $-z_{\alpha/2} \leq R \leq z_{\alpha/2}$
+  + This $z_{\alpha/2}$ is from Normal Distribution table 
+  + 95% confidence: z = 1.96
+  + 90% confidence: z = 1.64
+
+## 3. Poisson process
++ From question:
+  + **rate** means $\lambda$ in formulas
+  + **mean** means $\frac{1}{\lambda}$ in formulas
+
+### Exponential Distribution
+$X \sim Exp(\lambda)$
++ PDF: $f(x) = \lambda e^{-\lambda x}$
++ CDF: $F(x) = 1-e^{-\lambda x}$
++ $P(X \geq x) = 1- P(X \leq x) = 1 - F(x) = e^{-\lambda x}$
++ Expectation: $E[x] = \frac{1}{\lambda}$
++ Variance: $Var(X) = E[X^2] - (E[X])^2 = \frac{1}{\lambda^2}$
+
+#### E.g.:
++ 4 people in queue, service rate = $\lambda$, waiting time = $4\lambda$ (from expectation)
++ Probability of a person waiting more than $t_1$: $P(X \geq t_1) = e^{-\lambda t_1}$
+
+### Random split:
+$P(\lambda_1+\lambda_2)$ is randomly split  
+$P[X_1 < X_2] = \int^\infin_0 P[X_1 < X_2 | X_1 = x] .* P[X_1 = x] dx = \frac{\lambda_1}{\lambda_1 + \lambda_2}$  
+#### E.g.: Calculate probability of a situation
+Machine 1's rate: $\lambda$  
+Machine 2's rate: $\mu$  
+They are both working, and there is 1 in the queue of machine  
+Probability of each situation:  
+![](img/c1.jpg)
+
+
+## 4. Random variate
+### PDF provided, find CDF
++ By changing the coefficients, adding constants to the CDF to make CDF valid
+  + CDF $F(x)$ = 0 in the beginning, = 1 at the end
+  + $F(x)$ has to be **continuous**
+#### Steps: If there are two functions in the pdf (excluding 0)
++ Assume 2 pdf: $f_1(x)$ when $0 \leq x < 1$, $f_2(x)$ when $1 \leq x < a$
++ Step 1: Calculate $g_1(x) = \int^x_{0} f_1(x) dx$
+  + $g_1(x)$ is CDF when $0 \leq x < 1$
+  + Calculate $g_1(1)$
++ Step 2:  Calculate $g_2(x) = \int^x_{1} f_2(x) dx + g_1(1)$
+  + $g_2(x)$ is CDF when $0 \leq x < 1$
+  + $g_2(a)$ must be 1
++ Step 3:
+  + $F(x) = 0$ when $x < 0$
+  + $F(x) = g_1(x)$ when $0 \leq x < 1$
+  + $F(x) = g_2(x)$ when $0 \leq x < a$
+  + $F(x) = 1$ when $x > a$
+
+
+### ITM - inverse transformation method
++ Calculate the inverse function of every CDF function
+  + Let $U = F(X)$
+  + Find X = a function of U
+  + Put U in range of X to get a new range
+#### E.g.:
+one of function in CDF is $x^3$ when $0 \leq x < 1$
+1. $U = x^3$
+2. $x = \sqrt[3]{U}$
+3. $0 \leq \sqrt[3]{U} < 1$
+4. Since $\sqrt[3]{U}$ is increasing, we can find $0 \leq U < 1$
+5. So ITM of this part of CDF is $\sqrt[3]{U}$, where $0 \leq U < 1$
+
+### Composition method
+1. Find CDF
+2. Find ITM
+3. Write down these:
+   1. generate $U \sim U(0,1)$
+   2. return $x = ITM$ when $... \leq U < ...$ 
+
+### Acceptance-rejection method:
+1. Find the max value $k$ of PDF
+2. let $t(x) = k$ in the range of PDF, $t(x) = 0$ in other ranges
+3. Calculate $c = \int^\infin_{-\infin} t(x)dx$, change infinite to be the range of PDF
+4. let $r(x) = t(x) / c$
+5. Write down these:
+   1. Generate $Y$ having density $r$
+   2. Generate $U \sim U(0,1)$, independent of Y 
+   3. If $U \leq f(Y)/t(Y)$, return X = y
+   4. Else, go back to step 1
+
+## 5. Output analysis of single system
