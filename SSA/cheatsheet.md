@@ -66,6 +66,14 @@ $q,r$ is given.
   + 95% confidence: z = 1.96
   + 90% confidence: z = 1.64
 
+#### t-test for the Mean
+Follow the general progress
++ $H_0$: the sample mean is the same with population mean
++ Test statistic: $t_n = \frac{\overline{X}(n) - \mu_0}{\sqrt{\frac{S^2(n)}{n}}}$
++ Reject $H_0$ if $|t_n| > t_{n-1,1-\frac{a}{2}}$
+  + $\overline{X}(n)$为样本均值，$\mu_0$为总体均值
+  + 当p-value < $1-\alpha$时拒绝原假设
+
 ## 3. Poisson process
 + From question:
   + **rate** means $\lambda$ in formulas
@@ -159,18 +167,67 @@ one of function in CDF is $x^3$ when $0 \leq x < 1$
 ### Empirical bootstrap method
 n is the size of the original data set. This method is picking n random numbers from original dataset, and repeating several times, to calculate confidence intervals. Each column is a group of picking.  
 1. Calculate mean $X^*_j$ of each column (group of bootstrap data)
-2. Calculate $\delta^*_j = X^*_j - \overline{X}(n)$, which means using mean of each column minors original dataset's mean
+2. Calculate $\delta^*_j = X^*_j - \overline{X}(n)$, which means using mean of each column minors original dataset's mean, and then **sort** them from low to high
 3. Find $\delta^*_{\frac{\alpha}{2}}, \delta^*_{1-\frac{\alpha}{2}}$
    1. If 90% confidence, and the number of groups is 100, then we found 5%th and 95%th number, which is 5th and 95th
    2. If 90% confidence, but the number of groups is 10, we can only use the 1st and 10th number as 5%th and 95%th
 4. Construct CI: $[\overline{X}(n) - \delta^*_{1-\frac{\alpha}{2}},\overline{X}(n) - \delta^*_{\frac{\alpha}{2}}]$
 
+#### Percentile method (Should not be used but appeared in exercise's answer)
+1. Calculate mean $X^*_j$ of each column (group of bootstrap data) and **sort** them
+2. Find 5%th and 95%th mean value of each column 
+   1. E.g.: 90% confidence, 10 column:
+   2. Find $X^*_1$ and $X^*_{10}$
+3. Construct CI: $[\overline{X}(n) - X^*_1，\overline{X}(n) - X^*_{10}]$ (a example)
+
+
 ### Batch Means Method
 The data is segmented and then calculated by averaging each segment.  
 + CI: $\overline{Y} \pm t_{m-1,1-\alpha/2} \sqrt{\frac{Y.variance}{len(Y)}}$
 
-## 6. Comparing alternative system configuration
 
+### Addition: CI for Normal Distribution
+#### z-Confidence Interval of the Mean
++ $\overline{X}(n)$ is normally distributed, $\sigma^2$ is known
+  + z-CI at $(1-\alpha)·100%$ level: $\overline{X}(n) \pm z_{1-\frac{a}{2}}·\sqrt{\frac{\sigma^2}{n}}$
+
+#### 𝑡-Confidence Interval of the Mean
++ $\overline{X}(n)$ is normally distributed, $\sigma^2$ is unknown
++ Estimate variance from data:
+  + $S^2(n) = \frac{\sum^n_{i=1}(X_i-\overline{X}(n))^2}{n-1}$
+  + 就是用样本方差代替总体方差
++ t-CI at $(1-\alpha)·100%$ level: $\overline{X}(n) \pm t_{1-\frac{a}{2}}·\sqrt{\frac{S^2(n)}{n}} = overline{X}(n) \pm t_{1-\frac{a}{2}}·S_{\overline{X}}$
+
+## 6. Comparing alternative system configuration
+### How many additional tests
++ $n_0$: the original sample size
++ $S_i^2(n_0)$: the variance of original sample i
++ $k$: how many systems (groups of data) there are 
++ $P*$: certainty
++ $d*$: not caring differences (should be the same unit with datasets)
++ $h_1$: the value found from D&D table with $P*, n_0, k$
++ Use D&D sample size formula to calculate
++ Note: remember to minors $n_0$ in the end
+
+### Confidence interval
+$H_0: \mu_1 = \mu_2$
+#### Paired-t confidence interval (same sample size)
++ Original 2 dataset: $t1$ and $t2$ (don't sort)
++ let $Z$ to be the series that
+  + `Z[i] = t1[i] - t2[i]`
++ $n$: sample size, dof: n-1
++ Find $t_{1-\alpha/2, dof}$ in t-distribution table
++ CI: $\overline{Z} \pm t_{1-\alpha/2, dof} * \sqrt{\frac{Z.variance}{n}}$
++ If CI cross 0, we reject $H_0$
+
+#### matching unpaired, unpooled variance t-test
+Follow the general progress in Part 2.
++ Test statistic: $t = \frac{\overline{X_1}-\overline{X_2}}{\sqrt{\frac{S_1^2}{n_1} + \frac{S_2^2}{n_2}}}$
++ dof is the first formula in Comparing Alternative System Configurations in formula sheet
+
+#### The independent t-test (pooled two-sample t-test, Equal population variance)
++ Test statistic: $t = \frac{\overline{X_1}-\overline{X_2}}{S_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}$
++ $S_p = \sqrt{\frac{((n_1-1)s_1^2(n_1) +(n_2-1)s_2^2(n_2))}{n_1+n_2-2}}$
 
 ## 7. Monte Carlo
 1. Set $h(x,y) = $ the function in the integral
