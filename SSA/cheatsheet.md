@@ -146,3 +146,51 @@ one of function in CDF is $x^3$ when $0 \leq x < 1$
    4. Else, go back to step 1
 
 ## 5. Output analysis of single system
+### Find Confidence interval
+1. Calculate mean $\mu$ and variance $\sigma^2$ of dataset, let $n$ = size of dataset
+2. Find $z_{1-\alpha/2}$ in normal distribution table
+   1. E.g.: if interval is 90%, $\alpha = 0.05 ((1-0.9)/2)$, so we have to find **$z_{0.95}$**
+   2. Go through the whole table to find the one which is the closest to **0.95**
+   3. We can find $0.9495$, and then plus its column head **0.04** and row head **1.6**
+   4. $z_{0.95} = 1.64$
+   5. Common interval: $90\%: 1.64$, $95\%: 1.96$
+3. Interval: $[\mu - z_{1-\alpha/2}\sqrt{\frac{\sigma^2}{n}}, \mu + z_{1-\alpha/2}\sqrt{\frac{\sigma^2}{n}}]$
+
+### Empirical bootstrap method
+n is the size of the original data set. This method is picking n random numbers from original dataset, and repeating several times, to calculate confidence intervals. Each column is a group of picking.  
+1. Calculate mean $X^*_j$ of each column (group of bootstrap data)
+2. Calculate $\delta^*_j = X^*_j - \overline{X}(n)$, which means using mean of each column minors original dataset's mean
+3. Find $\delta^*_{\frac{\alpha}{2}}, \delta^*_{1-\frac{\alpha}{2}}$
+   1. If 90% confidence, and the number of groups is 100, then we found 5%th and 95%th number, which is 5th and 95th
+   2. If 90% confidence, but the number of groups is 10, we can only use the 1st and 10th number as 5%th and 95%th
+4. Construct CI: $[\overline{X}(n) - \delta^*_{1-\frac{\alpha}{2}},\overline{X}(n) - \delta^*_{\frac{\alpha}{2}}]$
+
+### Batch Means Method
+The data is segmented and then calculated by averaging each segment.  
++ CI: $\overline{Y} \pm t_{m-1,1-\alpha/2} \sqrt{\frac{Y.variance}{len(Y)}}$
+
+## 6. Comparing alternative system configuration
+
+
+## 7. Monte Carlo
+1. Set $h(x,y) = $ the function in the integral
+2. Set $X \sim U(upper limit,lower limit)$, $Y \sim U(upper limit,lower limit)$
+3. If $X,Y \leq h(x,y)$, return x,y = X,Y
+4. Else, go back to step 2
+
+## 8. Variance reduction
+### Useful formulas:
++ $Cov(X_{1j},X_{2j}) = E(X_{1j}*X_{2j}) - E(X_{1j})E(X_{2j})$
++ $Var(X) = E(X^2)-(EX)^2$
++ $E(X + Y) = E(X) + E(Y)$
++ $E(cX) = cE(X)$
++ $Var(X - Y) = Var(X) + Var(Y)$ (ind)
++ $Var(X\pm Y) = Var(X) + Var(Y) \pm 2Cov(X,Y)$ (CRN)
+
+### Methodology
+1. Directly put $X_{1j}$ and $X_{2j}$ into formulas
+   1. E.g.:  $X_{1j} = U^5$ -> $E(U^5)$
+2. $E(U^k) = \frac{1}{k+1}$  
+   1. E.g.: $E(U^5) = \frac{1}{6}$
+3. Use this fact and formulas to get **Cov**, **Var(ind)**, **Var(CRN)**
+4. Conclusion: If **Var(CRN) > Var(ind)** (Cov is positive), our data is more reliable.
