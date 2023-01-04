@@ -32,7 +32,7 @@
   + Step 1: construct $y_k = [10*u_k]$
   + Step 2: Group per 5 observations $(y_{5j},y_{5j+1},y_{5j+2},y_{5j+3},y_{5j+4})$
   + Step 3: Count occurrences of patterns in table
-### Various runs tests
+### runs tests
 + Run: a sequence of consecutive observations  
   - above the mean (denoted by $a$)
   - below the mean (denoted by $b$)
