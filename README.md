@@ -1,5 +1,6 @@
 # NotesDumpingGround
-The cyber dumping ground of Ankie's notes. *English & Chinese mixed.*
+The cyber dumping ground of Ankie's notes. *English & Chinese mixed.*  
+
 **Announcement:** any academic plagiarism generated from this repository is not my wish or willing. Please DO NOT copy my assignments.
 
 If you find any mistake or you want to add anything, leave them in *discussions* section.
