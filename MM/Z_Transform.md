@@ -44,7 +44,7 @@ $A_2 = \frac{numerator}{(z+b_1)z}|_{z = p_2}$
 Same with Laplaze transform, but remember to **divide z**  
 E.g. exercise 11.4:  
 $H(z) = \frac{z^2+3}{z^2-z+1/4} = \frac{z^2+3}{(z-1/2)^2}$  
-1. $H(s) = A_0 +\frac{B_{1,1}}{z-1/2}+\frac{B_{1,2}}{(z-1/2)^2}$   
+1. $H(s) = A_0 +\frac{zB_{1,1}}{z-1/2}+\frac{zB_{1,2}}{(z-1/2)^2}$   
 2. $A_0 = H(0) = 12$
 3. $B_{1,2} = \frac{H(z)(z-1/2)^2}{z} = \frac{z^2+3}{z}|_{z=1/2} = \frac{13}{2}$ (same with PFE without repeated poles)
 4. $B_{1,1} = (\frac{(z+1/2)^2H(z)}{z})' = \frac{(2z^2-(z^2+3))}{z^2}|_{z = -1/2} = -11$   
