@@ -10,8 +10,12 @@ E.g. second order derivative = $y''(t) = y^{(2)}(t)$
 $s^nY(s) + a_1s^{n-1}Y(s) + ... + a_nY(s) = b_0s^nU(s) + b_1s^{n-1}U(s) +...+b_nU(s)$  
 ==>  
 $(s^n + a_1s^{n-1} + ... +a_n) Y(s) = (b_0s^n +b_1s^{n-1} + ... +b_n)U(s)$
-==> **Transfer function(4.1.3)**:  
-$Y(s) = H(s) U(s)$, where $H(s) = \frac{b_0s^n +b_1s^{n-1} + ... +b_n}{s^n + a_1s^{n-1} + ... +a_n}$
+==> 
+$Y(s) = H(s) U(s)$, where **Transfer function(4.1.3):** $H(s) = \frac{b_0s^n +b_1s^{n-1} + ... +b_n}{s^n + a_1s^{n-1} + ... +a_n}$ 
+
+### Example(exercise 6.1):
+Differential equation: $y''(t) + 7y'(t) + 6y(t) = u(t)$  
+Transfer function: $H(s) = \frac{1}{s^2+7s+6}$
 
 ## Poles and zeros, the order of a system, causality (4.1.3)
 + **zeros**: the roots of the numerator polynomial
@@ -46,13 +50,13 @@ E.g. denominator: $s^3+s+10$
 #### Calculation example:
 ![](imgs/laplace2.png)
 
-### PFE with repeated poles
+### PFE with repeated poles ($(s-p_i)^k$ appear in nume)
 E.g. exercise 5:  
 $\frac{s^3-s^2-4s+4}{s^3+5s^2+7s+3} = \frac{s^3-s^2-4s+4}{(s+3)(s+1)^2}$  
 Notice that degree of deno and nume are the same  
-1. $H(s) = A_0 + \frac{A_1}{s+3}+\frac{A_2}{s+1}+\frac{A_3}{(s+1)^2}$   
-2. Then $A_0 = 1$, $A_1, A_3$ are calculated in the same way of PFE without repeated poles  
-3. But $A_2$ is calculated as: $A_2 = ((s+1)^2H(s))'|_{s = -1}$   
+1. $H(s) = A_0 + \frac{A_1}{s+3}+\frac{B_{1,1}}{s+1}+\frac{B_{1,2}}{(s+1)^2}$   
+2. Then $A_0 = 1$, $A_1, B_{1,2}$ are calculated in the same way of PFE without repeated poles  
+3. But $B_{1,1}$ is calculated as: $B_{1,1} = ((s+1)^2H(s))'|_{s = -1}$   
    + Multiply the highest degree, and then find the derivative
 
 ## Obtaining the impulse response function
