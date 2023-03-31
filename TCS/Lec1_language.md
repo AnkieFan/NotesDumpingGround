@@ -33,8 +33,7 @@ Input -> Algorithm -> Output
   + $w^n = \varepsilon$ if n = 0
   + $w^n = w \circ w^{n-1} = ww^{n-1}, n >1$
   + $w = cat => w^3 = (cat)^3 = cat \circ (cat)^2 = cat \circ cat \circ cat = catcatcat$
-+ 𝑣 is called substring of 𝑤 if we can find strings 𝑥,𝑦(possibly ε such
-that 𝒘=𝒙𝒗𝒚.
++ 𝑣 is called substring of 𝑤 if we can find strings 𝑥,𝑦(possibly ε) such that 𝒘=𝒙𝒗𝒚.
   + If $x = \varepsilon$ then v is prefix of w
   + If $y = \varepsilon$ then v is suffix of w
 
