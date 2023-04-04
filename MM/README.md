@@ -9,3 +9,11 @@
    + (Exam) From state-space systems to transfer functions: exercise 17
 4. Interconnected_system
    + Exercise 18-21 (especially 21)
+
+
+## Some important figures
+Stability:  
+![](imgs/stability.jpg)
+
+Sinusoidal Fidelity transform in discrete plate:  
+![](imgs/Sin_fidelity_discrete.png)
