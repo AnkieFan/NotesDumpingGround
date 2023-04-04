@@ -20,7 +20,7 @@ $\dot{\textbf{x}}(t) = \textbf{A}\textbf{x}(t) + \textbf{b}u(t)$
 + $\textbf{x}(t)$: nx1 matrix
 + $\textbf{A}$: nxn system matrix
 + $\textbf{b}$: nx1 input matrix
-+ 
+
 output: $y(t) = \textbf{c}\textbf{x}(t) + du(t)$  
 
 ### Example (exercise 13)
