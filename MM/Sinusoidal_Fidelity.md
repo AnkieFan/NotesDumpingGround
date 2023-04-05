@@ -13,6 +13,8 @@ For stable LTI system:
 + When $u(t) = cos(\omega t)$
   + $y_s(t) = |H(i\omega)| cos(\omega t + \angle H(i\omega))$
 + Notations:
+  + $H(i\omega)$: exact matching frequency response of the system
+  + $y_s(t)$: steady state output $y_s(t)$ corresponding to the aforementioned input
   + $T$: period
   + $f$: frequency
   + $f = \frac{1}{T}$
@@ -54,6 +56,6 @@ Turn $\omega$ to be z as below(see example).
 ### Example: exercise 24
 $u[k] = 3sin[\frac{2\pi k}{4}], H(z) = \frac{z^2-z/2+1/6}{z^2-z/4-1/8}$  
 1. ![](imgs/sin_fin.jpg)
-2. Eventually: $H(e^{\pi i/2}) = \frac{612-204i}{765}$, $|H(e^{\pi i/2})| \approx 0.8433$
-3. $\angle H(e^{\pi i/2}) = actan2(\frac{-204}{765}, \frac{612}{765}) \approx -0.3217$
-4. $y_s[k] = 3\times 0.8433 sin(\frac{\pi}{2} k - 0.3217) = 2.5298sin(\frac{\pi}{2} k - 0.3217)$
+2. Eventually: $H(e^{\pi i/2}) = \frac{-612-204i}{765}$, $|H(e^{\pi i/2})| \approx 0.8433$
+3. $\angle H(e^{\pi i/2}) = actan2(\frac{-204}{765}, \frac{-612}{765}) \approx 0.3217$
+4. $y_s[k] = 3\times 0.8433 sin(\frac{\pi}{2} k + 0.3217) = 2.5298sin(\frac{\pi}{2} k + 0.3217)$
