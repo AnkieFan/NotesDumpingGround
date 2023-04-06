@@ -40,8 +40,8 @@ Stable when poles are in a circle of diameter 1 on the complex plane.
 $p_i$: poles  
 E.g.: $H(z) = A_0 + \frac{zA_1}{z-p_1} + \frac{zA_2}{z-p_2}$  
 $A_0 = H(z)|_{z=0}$  
-$A_1 = \frac{numerator}{(z+b_2)z}|_{z = p_1}$  
-$A_2 = \frac{numerator}{(z+b_1)z}|_{z = p_2}$  
+$A_1 = \frac{numerator}{(z-p_2)z}|_{z = p_1}$  
+$A_2 = \frac{numerator}{(z-p_1)z}|_{z = p_2}$  
 **Remember to divide *z* in calculating $A_n$**  
 
 ### PFE with repeated poles ($(z-p_i)^k$ appear in nume)

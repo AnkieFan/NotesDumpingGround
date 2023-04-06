@@ -24,3 +24,12 @@ Stability:
 
 Sinusoidal Fidelity transform in discrete plate:  
 ![](imgs/Sin_fidelity_discrete.png)
+
+### some tips
++ The system which is controllable and observable is therefore minimal, so there are no pole-zero cancellations and the numerator and denominator polynomials of its transfer function both are of degree n.
++ Since $|z_k| = e^{Re(s_k)T_s}$, a discrete-time pole is stable if and only if the corresponding
+continuous-time pole is stable.
++ If the system was uncontrollable, some poles (corresponding to the uncontrollable part of the system) could not be moved.
++ Continuous-time stable poles are always mapped to discrete-time stable poles, and continuous-time unstable poles to discrete-time unstable poles.
++ If a discrete-time system is unstable, its inverse system can be stable or unstable.
++ Every system in controllable canonical form is controllable.
