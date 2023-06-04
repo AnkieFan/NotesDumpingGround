@@ -24,6 +24,10 @@ $H(z) = \frac{b_0 + b_1z^{-1}+b_2z^{-2}+...+b_nz^{-n}}{1+a_1z^{-1} + a_2z^{-2} +
 Differential equation: $y[k]+y[k-1]-12y[k-2]=2u[k]-u[k-2]$  
 Transfer function: $H(z) = \frac{2z^2-1}{z^2+z-12}$
 
+## Stability:
+Stable when poles are in a circle of diameter 1 on the complex plane.  
+-> Simply, the **modulus of poles are all <= 1**
+
 ## Causality
 + causal(the output does not anticipate the input): $h[k] = 0$ for all $k<0$ 
 + strictly causal: ↑ + $h[0] = 0$
@@ -36,8 +40,8 @@ Transfer function: $H(z) = \frac{2z^2-1}{z^2+z-12}$
 $p_i$: poles  
 E.g.: $H(z) = A_0 + \frac{zA_1}{z-p_1} + \frac{zA_2}{z-p_2}$  
 $A_0 = H(z)|_{z=0}$  
-$A_1 = \frac{numerator}{(z+b_2)z}|_{z = p_1}$  
-$A_2 = \frac{numerator}{(z+b_1)z}|_{z = p_2}$  
+$A_1 = \frac{numerator}{(z-p_2)z}|_{z = p_1}$  
+$A_2 = \frac{numerator}{(z-p_1)z}|_{z = p_2}$  
 **Remember to divide *z* in calculating $A_n$**  
 
 ### PFE with repeated poles ($(z-p_i)^k$ appear in nume)

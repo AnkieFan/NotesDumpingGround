@@ -52,6 +52,9 @@ Take it easy, Christof and Tom are really kind.
 ### Graph Theory
   Notes can't help a lot tbh: [Useless notes](https://github.com/AnkieFan/NotesDumpingGround/tree/main/GraphTheory)  
 
+### Databases
+Group project: https://github.com/kal39/sql_pizza
+
 ## Period 2 (I was indeed lazy in this period, didn't do much in assignments):
 ### Reasoning Technique
   Notes: [Notes](https://github.com/AnkieFan/NotesDumpingGround/tree/main/RT)  

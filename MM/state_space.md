@@ -20,7 +20,7 @@ $\dot{\textbf{x}}(t) = \textbf{A}\textbf{x}(t) + \textbf{b}u(t)$
 + $\textbf{x}(t)$: nx1 matrix
 + $\textbf{A}$: nxn system matrix
 + $\textbf{b}$: nx1 input matrix
-+ 
+
 output: $y(t) = \textbf{c}\textbf{x}(t) + du(t)$  
 
 ### Example (exercise 13)
@@ -31,7 +31,7 @@ Linear state-space representation: $\begin{pmatrix} \dot{\theta} \\ \ddot{\theta
 $\textbf{x}[k+1] = \textbf{A}\textbf{x}[k] + \textbf{b}u[k]$   
 $y[k] = \textbf{c}\textbf{x}[k] + du[k]$  
 
-## From state-space to transfer functions (exam)
+## From state-space to transfer functions (exam) (Fadeev algorithm)
 ### Laplace transform
 $s\textbf{X}(s) = \textbf{A}\textbf{X}(s) + \textbf{B}U(s)$   
 $Y(s) = \textbf{C}\textbf{X}(s) + DU(s)$  
@@ -47,6 +47,8 @@ $\textbf{H}(z) = \textbf{C}(z\textbf{I-A})^{-1}\textbf{B}+D$
 1. find $sI-A$ (or z in discrete)
 2. find $(sI-A)^{-1}$ through determinant
    1. $\begin{pmatrix} a & b \\ c & d \end{pmatrix}^{-1} = \frac{1}{ad-bc}\begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$
+   2. For larger size matrix: calculate according to **Fadeev Algorithm** in Formula sheet
+      + $tr(\textbf{A})$ means SUM of the diagonal elements of the matrix
 3. Continue to calculate. Trick: we can just turn the $\frac{1}{ad-bc}$ to be $(s+pole1)(s+pole2)$, and keep it out of matrix.
    1. They are poles but
    2. They may be canceled in the following step
@@ -59,3 +61,8 @@ $\textbf{C}(z\textbf{I-A})^{-1} = \frac{1}{(s-2)(s+1)} \begin{pmatrix} 1&0 \end{
 $\textbf{C}(z\textbf{I-A})^{-1}\textbf{B} = \frac{1}{(s-2)(s+1)} \begin{pmatrix} s-2&-4 \end{pmatrix} \begin{pmatrix} 3 \\ -1 \end{pmatrix} = \frac{3(s-2) + 4}{(s-2)(s+1)}$  
 $\textbf{H}(z) = \textbf{C}(z\textbf{I-A})^{-1}\textbf{B}+D = \frac{3(s-2) + 4}{(s-2)(s+1)} + 1 = \frac{s^2+2s-7}{(s-2)(s+1)}$  
 Poles: s = 2 and s = -1
+
+## From transfer functions to state-space
+$y^{(n)}(t)+a_1y^{(n-1)}(t) + ... +a_ny(t) = b_0u^{(n)}(t)+b_1u^{(n-1)}(t)+...+b_nu(t)$  
+Turn it to be Controllable canonical form(in formula sheet):  
+![](imgs/canonical_form.png)
