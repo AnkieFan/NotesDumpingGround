@@ -9,7 +9,17 @@ $\bf{Bx_B = b}$  ==> $\bf{x_B = B^{-1}b}$
 $\bf{B}$ basis matrix  
 $Z = \bf{c_Bx_B} = \bf{c_BB^{-1}b}$
 $\bf{c_B}$: the vector whose elements are the objective function coefficients (including zeros for slack variables) for the corresponding elements of $\bf{x_B}$  
-Shadow prices: $\bf{c_BB^{-1}}$  
+Shadow prices: $\bf{c_BB^{-1}}$ '
+
+## Fundamental Insight
++ $\bf{S^* = B^{-1}}$
++ $\bf{A^* = B^{-1}A}$
++ $\bf{y^* = c_BB^{-1}}$
++ $\bf{z^* = c_BB^{-1}A}$, so $\bf{z^* - c}$ is coefficients of the original variables in row 0
++ $Z^* = \bf{c_BB^{-1}b}$
++ $\bf{b^* = B^{-1}b}$
+
+![](imgs/fundemental_insight.png)
 
 ### Iteration with Matrix form
 1. Find $\bf{B}$ or $\bf{B^{-1}}$. Initial status: $\bf{B = B^{-1} = I}$
