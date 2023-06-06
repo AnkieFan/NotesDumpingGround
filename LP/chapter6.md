@@ -1,4 +1,5 @@
 # Duality
+$y = \bf{c_BB^{-1}}$
 
 ## Standard form trans
 + Maximization
@@ -50,3 +51,10 @@ Nonbasic -> Basic
 + **superoptimal**: "beyond optimality" and not feasible
   + at least one basic variable is negative, top row non-negative
 + Neither feasible nor superoptimal: at least one basic variable is negative, at least one element in the top row is negative
+
+#### which is the more efficient way
+Less constraints has more efficient
+
+## Complementary Slackness Property
+surplus variable of y * decision variable of x = 0  
+decision variable of y * slack variable of x = 0
