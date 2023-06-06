@@ -36,4 +36,4 @@ The optimum to the LP-relaxation is a lower bound on the ILP optimum (and thus a
   + $x_1 = x_1^+-x_1^-$
 + a decision variable whose natural range:
   + $x_1 >= -10$
-  + $x_1' = x_1 + 10$s
+  + $x_1' = x_1 + 10$
