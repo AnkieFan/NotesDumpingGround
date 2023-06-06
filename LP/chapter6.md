@@ -86,8 +86,9 @@ Assume we already have an optional solution for an LP
 + Also allows for prediction of how changes would propagate
 
 #### Allowable Range
-+ Keep the first row all be non-negative (all coefficients $\geq$ 0)
++ Maintain **optimal**(change c): Keep the first row all be non-negative (all coefficients $\geq$ 0)
   + Remember to turn it be standard form first (Geussion elimination)
++ Maintain **feasible**(change b): keep the RHS all be non-nega
 
 #### Case 1: changes to b vector
 $\bf{b^* = S^*\overline{b}}$
@@ -108,13 +109,14 @@ $\bf{b^* = S^*\overline{b}}$
 + Feasibility: maintained
 + Optimality: not sure
 + Duality Theory: In the dual there is a constraint which is  constructed from column xj of the original LP. If we change  this column, we change only this constraint in the dual. The  coefficient of xj in the new tableaux is the surplus for this  revised dual constraint (when evaluated at y*).
-  + 验证feasible: 代入新的constraint看是否violate
+  + 验证feasible: 代入新的constraint看是否violated或者↓
   + 验证optimal:观察表格，RHS全正但top row有负就是suboptimal， RHS有负就是superoptimal
 
 #### Case 2b: Introduction of a new variable
 Same as 2a, but the original coefficients of this new variable are 0.  
 Dual: add one more constraint
 
-#### Case 3:
+#### Case 3: Change A/c
 
 #### Case 4: Introduction of a new constraint
+Add the constraint directly to be the last row and turn it to be proper form (Geussion elimination)
