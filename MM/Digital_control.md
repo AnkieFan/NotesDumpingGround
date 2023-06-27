@@ -40,4 +40,4 @@ Quetsion: One wants to find a state-feedback such that all poles of the closed l
 ## Fourth step: Find $T$ and $T^{-1}$
 1. $T^{-1} = W_c \cdot \overline{W_c^{-1}}$
 2. Inverse it to find $T = (T^{-1})^{-1}$
-## Last step: feedback control law $L = TL$
+## Last step: feedback control law $L = \overline{L}T$
