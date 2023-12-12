@@ -1,5 +1,9 @@
 # Calculus Cheatsheet
-Exam preparation Suggestion: do all exam level exercises according to this cheatsheet. Do more exercises as much as possible. It's not hard to get 10 in this course. Good luck!  
+Exam preparation Suggestion: do all exam level exercises according to this cheatsheet. Do more exercises as much as possible. It's not hard to get 10 in this course. Good luck!
+
+## Announcement:
+**THIS IS MY OWN SUMMARY, will not be provided in the exam.**
+There may still be small mistakes in this document. Please report them to me if you found any :D Thx!
 
 ## Limitations
 ### Limits, Continuity and Differentiability
@@ -35,7 +39,7 @@ When $\lim \frac{f(x)}{g(x)} = \frac{0}{0}$ or $\frac{\infin}{\infin}$ or $\frac
 ### Graph Sketch
 + When $f(x) = 0$, you can find intersection of the function with the x-axis.
 + When $f'(x) > 0$, function increases. When $f'(x) < 0$, function decreases. Function has global maximum/minimum when $f'(x) = 0$.
-+ When $f''(x) > 0$, function concaves up. When $f''(x) <> 0$, function concaves down.
++ When $f''(x) > 0$, function concaves up. When $f''(x) < 0$, function concaves down.
 
 ## Sequences and Series
 ### Check if $\sum^\infin_1 a_n$ converges or diverges (Multiple choices like quizzes in Tutorial 5)
