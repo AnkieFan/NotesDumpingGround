@@ -1,4 +1,8 @@
-2. Find bugs
+## 1. Theory
++ Data race: If between two synchronization points at least one thread writes to a memory location from which at least one other thread reads, the result is not deterministic (race condition).   
++ Deadlock: A deadlock is a situation in parallel programming where a set of processes are blocked because each process is waiting for a resource that another process holds. None of the processes can proceed, because there is a circular chain of processes each of which is waiting for a resource held by the next member of the chain.
+
+## 2. Find bugs
 ```
 #include <stdio.h>
 #include "mpi.h"
@@ -24,7 +28,7 @@ int main(int argc, char** argv) {
 }
 ```
 
-3. Send and Receive
+## 3. Send and Receive
 Modify the following program so that it uses non-blocking methods instead of blocking methods.
 Hint: The behavior of the program does not need to stay exactly the same.
 ```
@@ -55,14 +59,13 @@ else
     printf("Process %i out of %i: received msg=%d.\n", my_rank, size, msg);
 }
 ```
-
-4. Theory  
-a) 
+## 4. Theory  
+### a) 
 + Synchronous communication requires the sending and receiving processes to coordinate directly at the time of the communication. The sender can only proceed once the receiver has started to receive the message. This can lead to blocking behavior, where the sender is stuck until the receiver is ready.
 + Asynchronous (buffered) communication allows the sender to send a message without waiting for the receiver to be ready. The system uses buffers: the message is copied into a system buffer from where the receiver can later retrieve it. This decouples the sender's progress from the receiver's, allowing the sender to continue its work without waiting. However, managing buffer space can add complexity, as there is a finite amount of memory for these buffers.
 + In summary, synchronous communication is like a face-to-face conversation that requires both parties to be present, while asynchronous communication is akin to leaving a voicemail, allowing the sender to continue with other tasks after leaving the message.  
 
-b)   
+### b)   
 + Collective communication in parallel programming is a method where a single operation is automatically performed across multiple processes within a group. Unlike point-to-point communication, which involves explicit send and receive pairs between individual processes, collective operations involve all processes in a communicator.
 
 + Common collective operations include:
@@ -77,4 +80,53 @@ b)
   + Synchronization: Many collective operations implicitly synchronize processes, which can simplify the design of parallel algorithms.
   + Scalability: It enables easier scaling of parallel applications to large numbers of processes.  
 
-c) 
+### c) 
++ Blocking communication in parallel programming means that the call to send or receive a message requires the process to wait until the operation is completed before proceeding. For a send operation, completion typically means the data has been transferred to a buffer so that the sender can reuse its send buffer. For a receive operation, it means the data has been received and is available to the process.
++ Non-blocking communication allows a process to initiate a send or receive operation and then proceed with its computation or other operations immediately. The actual data transfer happens in the background, and the process must later check if the communication has completed or wait for its completion before using the data involved in the operation.
++ The key difference is that blocking communication can cause a process to idle and waste computational resources if the other side is not ready, while non-blocking communication allows a process to continue doing useful work while the communication is still in progress. Non-blocking communication can lead to more efficient utilization of resources and better overall performance, especially in scenarios where communication and computation can be overlapped.
+
+## 5. OpenMP
+### a)
+
+```
+void sum_up(long* a, int num){
+    long s = 0;
+    #pragma omp parallel for reduction(+:s)
+    {
+        for(int i = 0;i<num; i++)
+            s += a[i];
+    }
+    printf("Sum: %ld\n", s);
+}
+```
+
+### b)
+```
+void sum_up(long* a, int num) {
+    long s = 0;
+
+    #pragma omp parallel for
+    {
+        long local_sum = 0;
+        for(int i = 0;i<num;i++){
+            local_sum += a[i];
+        }
+
+        #pragma omp critical
+        {
+            s += local_sum;
+        }
+    }
+    printf("Sum: %ld\n", s);
+}
+```
+
+## 6.
+1. `static`: In static scheduling, the iterations are divided into chunks of a fixed size (chunk). Each thread is assigned a chunk of iterations to work on. The chunk size is specified as an optional parameter.
+   + clause: `schedule(static, chunk)`
+2. `dynamic`: In dynamic scheduling, the iterations are dynamically assigned to threads. Each thread picks up a chunk of iterations as it completes its previous chunk. The chunk size is again an optional parameter.
+   + clause: `schedule(dynamic, chunk)`
+3. `guided`: Guided scheduling is similar to dynamic scheduling, but the chunk size starts large and decreases exponentially. This can be beneficial for load balancing as threads that finish early can pick up smaller chunks of remaining work.
+   + clause: `schedule(guided, chunk)`
+
+## 7.
