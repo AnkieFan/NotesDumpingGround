@@ -351,3 +351,6 @@ MigrationBackup/
 
 # My calculator
 calculator.ipynb
+
+# VScode
+.vscode
