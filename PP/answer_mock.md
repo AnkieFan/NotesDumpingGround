@@ -129,4 +129,57 @@ void sum_up(long* a, int num) {
 3. `guided`: Guided scheduling is similar to dynamic scheduling, but the chunk size starts large and decreases exponentially. This can be beneficial for load balancing as threads that finish early can pick up smaller chunks of remaining work.
    + clause: `schedule(guided, chunk)`
 
-## 7.
+## 7. Java Streams
+### a)
+```
+public static Stream<String> getLetters() {
+    // Using Stream.of to create a stream with the letters A-Z followed by a-z
+    return Stream.concat(
+            Stream.of("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M","N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"),
+            Stream.of("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m","n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z")
+        );
+}
+```
+
+### b)
+```
+public static int[] getPositiveNumbers(int[] arr) {
+    return Arrays.stream(arr)
+                .parallel()  // Enable parallel processing
+                .filter(x -> x > 0)
+                .toArray();
+}
+```
+
+### c)
+```
+import java.util.stream.IntStream;
+
+
+public static int[] checkGoldbachsConjecture(int z) {
+    if (z % 2 != 0 || z < 4) {
+        throw new RuntimeException(z + " must be even and >=4");
+    }
+
+    int[] primes = getPrimes(z).toArray();
+
+    return IntStream.range(0, primes.length)
+                .parallel()
+                .boxed()
+                .flatMap(i -> IntStream.range(i, primes.length)
+                        .filter(j -> primes[i] + primes[j] == z)
+                        .mapToObj(j -> new int[]{primes[i], primes[j]})
+                )
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Goldbach's conjecture is disproved for " + z));
+}
+
+private static IntStream getPrimes(int z) {
+    return IntStream.range(2, z)
+                .filter(GoldbachConjecture::isPrime);
+}
+
+private static boolean isPrime(int n) {
+    return n > 1 && IntStream.range(2, (int) Math.sqrt(n) + 1).noneMatch(i -> n % i == 0);
+}
+```
