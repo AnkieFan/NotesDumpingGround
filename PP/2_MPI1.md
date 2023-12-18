@@ -85,7 +85,7 @@ time since some time in the past
 + Scatters an array of data to many processes
 + Array index is rank number:
 + `int MPI_Scatter(void* sendbuf, int sendcount, MPI_Datatype sendtype, void* recvbuf, int recvcount, MPI_Datatype recvtype, int root, MPI_Comm comm)`
-+ Usage: `int error = MPI_Scatter(data, 5, MPI_INT, &localData, 5, MPI_INT, 0, MPI_COMM_WORLD);`
++ Usage: `int error = MPI_Scatter(data, data_size / size, MPI_INT, local_data, data_size / size, MPI_INT, 0, MPI_COMM_WORLD);`
 
 #### MPI_Gather (All-To-ONe)
 + Inverse operation of MPI_Scatter

@@ -37,7 +37,7 @@ Stream<Integer> s = list.stream();
 IntStreams = IntStream.range(0,10);
 
 //Infinite Stream 1,2,3,4,…
-IntStreams = IntStream.iterate(1,(inti)->i+1);
+IntStreams = IntStream.iterate(1,(int i)->i+1);
 ```
 
 #### Open stream from a file
@@ -67,19 +67,25 @@ DoubleStream ds= s.asDoubleStream();
 IntStream s2 = ds.mapToInt((double d) -> (int) d);
 
 //Stream from 2 to 100, only even numbers
-IntStream s = IntStream.iterate(2,(inti)->i+2).limit(50);
+IntStream s = IntStream.iterate(2,(int i)->i+2).limit(50);
 //or
-IntStream s = IntStream.rangeClosed(1,50).map((inti)->i*2);
+IntStream s = IntStream.rangeClosed(1,50).map((int i)->i*2);
 //or
-IntStream s = IntStream.rangeClosed(2,100).filter((inti)->(i%2==0));
+IntStream s = IntStream.rangeClosed(2,100).filter((int i)->(i%2==0));
 ```
+#### Lambda expression
++ `Integer::intValue`, `(Integer x) -> x.IntValue()`
++ `(int i) -> (i%2 ==0)`
++ `reduce((i, j) -> arr[i] >= arr[j] ? i : j)` find the index of max value
++ `reduce((a, b) -> a >= b ? a : b)` find the max value 原理：先比较前两个元素，再用结果对比下一个元素, same as `max(Integer::compareTo)`
 
 ### Close
 + Collect stream in array `toarray()`
 + Collect stream in collection: `collect()`
 + Apply a function for each element: `forEach()`
-+ Apply a reduction funcion: `reduce()`
++ Apply a reduction function: `reduce()` (combine elements of a stream into a single result)
 + `average()`, `count()`, `max()`, `min()`, `sum()`
++ `boxed()` Boxing is the process of converting a primitive type to its corresponding wrapper class (e.g., int to Integer). Conversely, unboxing is the process of converting a wrapper class to its primitive type.
 
 Examples:
 ```
@@ -92,6 +98,14 @@ ArrayList<Integer> list= newArrayList<>();
 IntStream.range(0,100).forEach((inti)-> list.add(i));
 //Print the elements of a stream
 IntStream.range(0,100).forEach(System.out::println);
+
+// Boxing:
+IntStream intStream = IntStream.of(intArray);
+// Use boxed() to convert IntStream to Stream<Integer>
+Stream<Integer> boxedStream = intStream.boxed()
+
+// Unboxing:
+IntStream intStream = boxedStream.mapToInt(Integer::intValue);
 ```
 
 ### Parallel Loops with Streams

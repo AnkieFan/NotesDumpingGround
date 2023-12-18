@@ -34,7 +34,7 @@ Hint: The behavior of the program does not need to stay exactly the same.
 ```
 MPI_Request request;
 ...
-{
+if(procRank ==0){
     int* msg = (int*) malloc(size * sizeof(int));
     for(i=1; i<size; i++)
     {
@@ -50,13 +50,90 @@ MPI_Request request;
         */
     }
     free(msg);
-}
-else
-{
+}else{
     int msg;
     MPI_Irecv(&msg, 1, MPI_INT, 0, 110, MPI_COMM_WORLD, &request);
     MPI_Wait(&request, &status);
     printf("Process %i out of %i: received msg=%d.\n", my_rank, size, msg);
+}
+```
+
+### 3.1 Max-Norm (MPI) 
+Compute in parallel and efficiently as possible the max-norm of a vector v with length L that has real numbers as components. The vector v and its length L are known to the master process (rank 0). The computation should be done evenly divided on all available processes.
+Hints:
+1. Assume that L is divisable by the number of processes without a rest.
+2. Assume that procCount (number of processes) and procRank (rank of the process) are initialized.
+3. The vector v contains only positive numbers
+4. The max-norm is defined as follows $||x||_{\infin} = max^n_{i=1}|x_i|$
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include "mpi.h"
+
+void initVector(double *v, const int length){
+    for(int i =0;i<length;i++)
+        v[i] = read() % 100 + ((double) rand()/RAND_MAX)
+}
+
+void printVector(double* v, const int length){
+    for(int i =0;i<length;i++)
+        printf("%lf\n", v[i]);
+}
+
+int main(int argc, char** argv){
+    int procRank, procCount, L;
+    double norm;
+    double* v;
+
+    // write codes here
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &procRank);
+    MPI_Comm_size(MPI_COMM_WORLD, &procCount);
+
+    if(procRank == 0){
+        printf("Enter the length of the vector: ");
+        scanf("%d", &L);
+
+        v = (double *)malloc(L * sizeof(double));
+
+        initVector(v,L);
+        MPI_Bcast(&L, 1, MPI_INT, 0, MPI_COMM_WORLD);
+        MPI_Scatter(v, L/procCount, MPI_DOUBLE,MPI_IN_PLACE, L/procCount, MPI_DOUBLE, 0, MPI_COMM_WORLD); //MPI_IN_PLACE: buffer
+    
+        double localMaxNorm = 0.0;
+        for (int i = 0; i < L / procCount; i++) {
+            if (v[i] > localMaxNorm) {
+                localMaxNorm = v[i];
+            }
+        }
+
+        MPI_Gather(%localMaxNorm, 1, MPI_DOUBLE,&norm, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+
+        for (int i = 0; i < procCount; i++) {
+            if (norm < localMaxNorm) {
+                norm = localMaxNorm;
+            }
+        }
+        printf("Max-norm: %lf\n", norm);
+        free(v);
+    }else{
+        MPI_Bcast(&L, 1, MPI_INT, 0, MPI_COMM_WORLD);
+        v = (double *)malloc(L / procCount * sizeof(double));
+        MPI_Scatter(v, L / procCount, MPI_DOUBLE, MPI_IN_PLACE, L / procCount, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+
+        double localMaxNorm = 0.0;
+        for (int i = 0; i < L / procCount; i++) {
+            if (v[i] > localMaxNorm) {
+                localMaxNorm = v[i];
+            }
+        }
+
+        MPI_Gather(&localMaxNorm, 1, MPI_DOUBLE, NULL, 0, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+        free(v);
+    }
+    MPI_Finalize();
+    return 0;
 }
 ```
 ## 4. Theory  
