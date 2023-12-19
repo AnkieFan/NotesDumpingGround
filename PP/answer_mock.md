@@ -86,85 +86,71 @@ int main(int argc, char** argv){
     double norm;
     double* v;
 
-    // write codes here
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &procRank);
     MPI_Comm_size(MPI_COMM_WORLD, &procCount);
 
     if(procRank == 0){
-        printf("Enter the length of the vector: ");
-        scanf("%d", &L);
-
+        L = 25;
         v = (double *)malloc(L * sizeof(double));
 
         initVector(v,L);
-        MPI_Bcast(&L, 1, MPI_INT, 0, MPI_COMM_WORLD);
-        MPI_Scatter(v, L/procCount, MPI_DOUBLE,MPI_IN_PLACE, L/procCount, MPI_DOUBLE, 0, MPI_COMM_WORLD); //MPI_IN_PLACE: buffer
-    
-        double localMaxNorm = 0.0;
-        for (int i = 0; i < L / procCount; i++) {
-            if (v[i] > localMaxNorm) {
-                localMaxNorm = v[i];
-            }
-        }
-
-        MPI_Gather(%localMaxNorm, 1, MPI_DOUBLE,&norm, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-
-        for (int i = 0; i < procCount; i++) {
-            if (norm < localMaxNorm) {
-                norm = localMaxNorm;
-            }
-        }
-        printf("Max-norm: %lf\n", norm);
-        free(v);
-    }else{
-        MPI_Bcast(&L, 1, MPI_INT, 0, MPI_COMM_WORLD);
-        v = (double *)malloc(L / procCount * sizeof(double));
+        printVector(v,L);
+        
+        // Here, code may be missing
         MPI_Scatter(v, L / procCount, MPI_DOUBLE, MPI_IN_PLACE, L / procCount, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
-        double localMaxNorm = 0.0;
-        for (int i = 0; i < L / procCount; i++) {
-            if (v[i] > localMaxNorm) {
-                localMaxNorm = v[i];
+    } // Here, code may be missing
+    else{
+        v = (double *)malloc((L / procCount) * sizeof(double));
+        MPI_Scatter(NULL, L / procCount, MPI_DOUBLE, v, L / procCount, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+    }
+
+    double localMaxNorm = 0.0;
+    for (int i = 0; i < L / procCount; i++) {
+        if (v[i] > localMaxNorm) {
+            localMaxNorm = v[i];
+        }
+    }
+
+    MPI_Gather(&localMaxNorm, 1, MPI_DOUBLE, &norm, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+
+    if(procRank == 0){
+        for (int i = 0; i < procCount; i++) {
+            if (norms[i] > norm) {
+                norm = norms[i];
             }
         }
-
-        MPI_Gather(&localMaxNorm, 1, MPI_DOUBLE, NULL, 0, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-        free(v);
+        printf("the max norm in %f\n", norm)
     }
+
+    // Here, code may be missing
     MPI_Finalize();
+
     return 0;
 }
 ```
 ## 4. Theory  
-### a) 
-+ Synchronous communication requires the sending and receiving processes to coordinate directly at the time of the communication. The sender can only proceed once the receiver has started to receive the message. This can lead to blocking behavior, where the sender is stuck until the receiver is ready.
-+ Asynchronous (buffered) communication allows the sender to send a message without waiting for the receiver to be ready. The system uses buffers: the message is copied into a system buffer from where the receiver can later retrieve it. This decouples the sender's progress from the receiver's, allowing the sender to continue its work without waiting. However, managing buffer space can add complexity, as there is a finite amount of memory for these buffers.
-+ In summary, synchronous communication is like a face-to-face conversation that requires both parties to be present, while asynchronous communication is akin to leaving a voicemail, allowing the sender to continue with other tasks after leaving the message.  
+### a) Difference between asynchronous (buffered) and synchronous communication
++ Synchronous: 
+  + send call will only start when the destination has started synchronous receive
+  + send operation will complete only after acknowledgement that the message was safely received by the receiving process (destination has copied data out of incoming buffer into memory)
++ Asynchronous (buffered):
+  + a send operation may "complete" even though the receiving process has not actually received the message
+  + only know that message has left
++ Asynchronous (buffered) communication allows processes to continue execution without waiting for data transfer completion, while synchronous communication ensures processes are synchronized and wait until the data transfer is finished before proceeding. 
 
-### b)   
-+ Collective communication in parallel programming is a method where a single operation is automatically performed across multiple processes within a group. Unlike point-to-point communication, which involves explicit send and receive pairs between individual processes, collective operations involve all processes in a communicator.
+### b) Principle of collective communication
++ Collective communication in parallel programming is a method where a single operation is automatically performed across multiple processes within a group. All processes in the communicator must call the same routine.
++ Collective communication is useful in parallel computing because it enables efficient coordination and information exchange among processes, enhancing overall performance by synchronizing and distributing data collectively.
 
-+ Common collective operations include:
-  + Broadcast: One process sends the same data to all other processes.
-  + Gather: All processes send data to one designated process, which collects the data.
-  + Scatter: One process has an array of data and distributes the elements to all other processes.
-  + Reduce: All processes contribute their data to a single operation (like sum, max, etc.), and the result is made available to one or all processes.
+### c) Difference between blocking and non-blocking communication
++ Blocking: Relates to the completion of an operation in the sense, that used resources, i.e. buffers, are free to use again
++ Non-blocking: Functions return as soon as possible but provided buffers must not be touched until another appropriate call successfully indicates that they are not in use anymore. Even read only access may be prohibited.
++ Blocking communication waits for the completion of data transfer, while non-blocking communication allows tasks to proceed without waiting for the transfer to finish.
 
-+ Collective communication is useful because:
-  + Efficiency: It is often optimized for performance on specific hardware, taking advantage of the underlying network topology.
-  + Convenience: It simplifies the code, as the programmer doesn't need to write explicit send/receive pairs for all involved processes.
-  + Synchronization: Many collective operations implicitly synchronize processes, which can simplify the design of parallel algorithms.
-  + Scalability: It enables easier scaling of parallel applications to large numbers of processes.  
-
-### c) 
-+ Blocking communication in parallel programming means that the call to send or receive a message requires the process to wait until the operation is completed before proceeding. For a send operation, completion typically means the data has been transferred to a buffer so that the sender can reuse its send buffer. For a receive operation, it means the data has been received and is available to the process.
-+ Non-blocking communication allows a process to initiate a send or receive operation and then proceed with its computation or other operations immediately. The actual data transfer happens in the background, and the process must later check if the communication has completed or wait for its completion before using the data involved in the operation.
-+ The key difference is that blocking communication can cause a process to idle and waste computational resources if the other side is not ready, while non-blocking communication allows a process to continue doing useful work while the communication is still in progress. Non-blocking communication can lead to more efficient utilization of resources and better overall performance, especially in scenarios where communication and computation can be overlapped.
-
-## 5. OpenMP
+## 5. Sum of an Array (OpenMP)
 ### a)
-
 ```
 void sum_up(long* a, int num){
     long s = 0;
@@ -205,6 +191,47 @@ void sum_up(long* a, int num) {
    + clause: `schedule(dynamic, chunk)`
 3. `guided`: Guided scheduling is similar to dynamic scheduling, but the chunk size starts large and decreases exponentially. This can be beneficial for load balancing as threads that finish early can pick up smaller chunks of remaining work.
    + clause: `schedule(guided, chunk)`
+
+## 6.1 Recursion (OpenMP)
+Explain how you would parallelise a recursive algorithm with OpenMP. give an example to illustrate your explanation  
+1. Identify Recursive Structure
+2. Define Parallel Regions: Use OpenMP directives to define parallel regions where tasks can be executed concurrently using `#pragma omp parallel` and `#pragma omp single`.
+3. Use `#pragma omp task` directives to create tasks for the parallel execution of recursive calls. Each task represents an independent computation.
+4. Task Synchronization: Use `#pragma omp taskwait` or other synchronization mechanisms to ensure that the program waits for the completion of parallel tasks before proceeding.
+
+```
+int fib(int n){
+    if (n<2) return n;
+    int x,y;
+    #pragma omp task shared(x)
+    {
+        x = fib(x-1);
+    }
+
+    #pragma omp task shared(y)
+    {
+        y = fib(y-2);
+    }
+
+    #pragma omp taskwait
+    return x+y;
+}
+
+int main(){
+    int n = 10;
+
+    #pragma omp parallel
+    #pragma omp single
+    {
+        #pragma omp task shared(n)
+        int result = fibonacci(n);
+
+        #pragma omp taskwait
+        printf("Fibonacci(%d) = %d\n",n,result)
+    }
+    return 0;
+}
+```
 
 ## 7. Java Streams
 ### a)
@@ -258,5 +285,31 @@ private static IntStream getPrimes(int z) {
 
 private static boolean isPrime(int n) {
     return n > 1 && IntStream.range(2, (int) Math.sqrt(n) + 1).noneMatch(i -> n % i == 0);
+}
+```
+
+## 7.1
+### a)
+```
+public static IntStream infinite(int z){
+    if(z > 1)
+        return IntStream.iterate(1, i -> (i % z) + 1);
+    else
+        return IntStream.iterate(1,i -> 1);
+}
+```
+### b)
+```
+public static void norm(double[] arr){
+    OptionalDouble max = Arrays.stream(arr).parallel().max();
+    Arrays.setAll(arr, i -> arr[i] / max);
+}
+```
+
+### c)
+
+```
+public static double getSum(double[][] matrix){
+    return Arrays.stream(matrix).parallel().flatMapToDouble(Arrays::stream).sum();
 }
 ```

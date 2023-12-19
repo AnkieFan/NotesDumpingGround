@@ -23,10 +23,6 @@ for(i = 0;i<100;i++)
 }
 ```
 ### Parallel Loop Scheduling
-+ the schedule clause:
-  + `schedule(static [, chunk])`: Iteration space divided into blocks of chunk size, blocks are assigned to threads in a round-robin fashion.
-  + `schedule(dynamic [, chunk])`: Iteration space divided into blocks of chunk (not specified: 1) size, blocks are scheduled to threads in the order in which threads finish previous blocks.
-  + `schedule(guided [, chunk])`: Similar to dynamic, but block size starts with implementation-defined value, then is decreased exponentially down to chunk.
 ```
 #pragma omp parallel for schedule(static, 10)
 for (int i = 0; i < N; ++i) {
@@ -34,6 +30,11 @@ for (int i = 0; i < N; ++i) {
     sum += i;
 }
 ```
+
+### the schedule clause:
+  + `schedule(static [, chunk])`: Iteration space divided into blocks of chunk size, blocks are assigned to threads in a round-robin fashion.
+  + `schedule(dynamic [, chunk])`: Iteration space divided into blocks of chunk (not specified: 1) size, blocks are scheduled to threads in the order in which threads finish previous blocks.
+  + `schedule(guided [, chunk])`: Similar to dynamic, but block size starts with implementation-defined value, then is decreased exponentially down to chunk.
 
 ## Synchronization
 ### Critical Region
