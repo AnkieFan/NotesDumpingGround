@@ -149,6 +149,9 @@ int main(int argc, char** argv){
 + Non-blocking: Functions return as soon as possible but provided buffers must not be touched until another appropriate call successfully indicates that they are not in use anymore. Even read only access may be prohibited.
 + Blocking communication waits for the completion of data transfer, while non-blocking communication allows tasks to proceed without waiting for the transfer to finish.
 
+### d) Explain what the metoh MPI_Barrier(MPI_Comm comm) does.
+It forces all processes within the specified communication group (comm) to wait until they have all reached the same point in their execution before proceeding. It is a collective operation that acts as a synchronization barrier, ensuring that no process moves ahead until all processes have arrived at the barrier.
+
 ## 5. Sum of an Array (OpenMP)
 ### a)
 ```
