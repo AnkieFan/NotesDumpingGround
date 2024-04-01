@@ -25,6 +25,7 @@
   + independent stages of behavior
 + static vs. dynamic
 + discrete vs. continuous
++ Markovian: probability of future event depends only on current state
 
 ## Agent Architectures
 ### Logic Based Agents(LBA) = Symbolic or Knowledge based AI view

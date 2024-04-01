@@ -32,7 +32,7 @@
 
 ## Basic Models and Mechanisms for Coordination
 
-### Standard Client-Server
+### Standard Client-Server (coordinate)
 + Client: sends requests for operations to another process
 + Server: receives requests for operations from another process
 + Service: operational subject of request by some client
@@ -46,7 +46,7 @@
   + information used by servers may be out of date (communication delays)
   + May be solved by server replication, but that removes the advantages
 
-### Task and Results Sharing
+### Task and Results Sharing (coordinate)
 + Idea: divide and conquer
 + can be tackled using MapReduce
 + Subtask relations:
@@ -66,7 +66,7 @@
   + Cost of control: loss in computing resources
   + Level of task decomposition
 
-### Blackboard System
+### Blackboard System (coordinate)
 + Shared memory with read and write control(on common memory area)
   + Independently or coordinated
   + Address of sender needs not to be known
@@ -95,7 +95,7 @@
 + Nodes push messages on specific topics through specific channels
 + subscribe to the channels
 
-### Contract Net Protocol
+### Contract Net Protocol (negotiate)
 + **Network of Nodes**:
   + managers: announce tasks
   + contractor: bids for right to carry out task
@@ -116,7 +116,7 @@
     + Selection criteria for managers in case of multiple bids?
     + Selection criteria for contractors in case of multiple announcements?
 
-### Functionally Accurate Cooperation (FA/C)
+### Functionally Accurate Cooperation (FA/C) (信息不完全的情况合作)
 = guideline for cooperation when the individuals’ local knowledge is **incomplete**, **uncertain** and **inconsistent**
 + functionally correct = acceptable and reasonable from a local point of view
 + cooperation = iterative refinement, transformation of local into global correctness
