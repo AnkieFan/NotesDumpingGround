@@ -48,7 +48,7 @@ Learning what to do: situation to action mapping, a policy
   + $V(s) = r(s, \pi(s)) + \gamma V(\delta(s,\pi(s)))$
   + Stochastic Transitions: $V^\pi (s) = r(s, \pi(s)) + \gamma \sum_{s' \in S} P_\delta (s, \pi(s),s')V^\pi(s')$
   + Stochastic Policy $V^\pi(s) = \sum_{a \in A} P_\pi (a|s) [r(s,a) + \gamma \sum_{s' \in S} P_\delta (s,a,s')V^\pi(s')]$
-+ Exploration and Exploitation
++ **Exploration and Exploitation**
   + Exploration: 探索 找到environment中可能达到的的values (比如找到不同policy下value的期望)
   + Exploitation：压榨 尽可能高的在这种情况下获得价值
   + exploration-exploitation dilemma: 探索-利用困境 
@@ -81,6 +81,13 @@ Value Function to Policy: $\pi_t(s) = \argmax_a [r(s, \pi(s)) + \gamma \sum_{s' 
 + Model-based 是指学习 Transition Model $T(S, a, S')$，即在状态 s 采取行动 a 后转移到 s' 的概率，然后基于这个 Model 去选择最优的策略。Transition Model 的空间复杂度为$O(S^2A)$，所以不太适合用于解决状态空间和动作空间过大的问题。
 + Model-free 未知 Transition Model，通常通过不断的尝试去直接学习最优策略。
 + 前面的 Policy Iteration 和 Value Iteration 都是 model-based 方法，因此一定程度上受限于状态空间和动作空间的规模。于是 Q-learning 应运而生。
+
+### Off-policy & On-policy
++ On-policy: agent根据其遵循的当前策略来学习价值函数 -> agent通过体验来了解其策略 
+  + SARSA:从S开始采取A获得R最终处于新状态S' agent使用此经验来更新其 Q 值。
++ On-policy: agent学习独立于用于生成数据的策略的价值函数
+  + Q-learning: agent不会根据相同的policy采取其他行动，而是选择在状态 S' 下最大化其 Q 值的行动(greedy)
+  + more exploitation
 
 ### Model-free: State-Action Values
 + State-Action values (Q-values): $Q(s,a) \equiv r(s,a) + \gamma \sum_{s'\in S}P_\delta(s,a,s')V^{\pi_{t-1}}(s')$
