@@ -45,7 +45,7 @@
   + 𝛼 = 𝛽 linear reward penalty
   + 𝛽 = 0 linear reward-inaction
   + $\alpha \gg \beta$ linear reward-𝜀-penalty
-  + 𝛼 = 1, 𝛽 = 0 cross learning
+  + 𝛼 = 1, 𝛽 = 0 cross learning ($R_j$ rewards need to be normalized)
 + Guarantees valid prob distribution 𝜋 if $r \in [0,1]$
 
 ### Regret Minimization
@@ -69,7 +69,7 @@ Here, $a$ and $b$ are the actions of the two players, $r$ is the reward, $s$ and
 PHC is a policy search method in reinforcement learning. It's a form of gradient ascent on the policy space. At each step, it proposes a small modification to the policy and adopts it if it leads to improved performance. In the context of MARL, each agent can independently apply PHC to learn its policy, but this can lead to non-convergence issues due to the non-stationarity introduced by concurrent learning.
 
 ### Win or Learn Fast (WoLF)
-WoLF is a principle for adjusting the learning rate in MARL based on whether the agent is 'winning' or 'losing'. The idea is to be cautious while winning (to avoid destabilizing a good policy) and to learn fast when losing. It's often combined with other methods like Q-learning. The WoLF principle helps mitigate some of the instability and non-convergence issues in MARL.
+The WoLF algorithm just considers two deltas(in PHC) instead of one. The first will be used when winning, and the second if losing at the game.
 
 ### Differences:
 + JAL considers the joint actions of all agents

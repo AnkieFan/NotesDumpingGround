@@ -149,6 +149,9 @@ Value Function to Policy: $\pi_t(s) = \argmax_a [r(s, \pi(s)) + \gamma \sum_{s' 
   + Samples are not IID
 
 ### SNES: Separable Natural Evolution Strategy
++ Maintains a Normal distribution for each gene
++ No standard selection, reproduction & mutation
++ Update similar to gradient
 
 ### Estimating the gradient
 $\mathbb{E}_\pi [Q^\pi (s,a) \nabla_\theta log(\pi(s,a,\theta))]$
