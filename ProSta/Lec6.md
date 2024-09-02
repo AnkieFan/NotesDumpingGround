@@ -13,7 +13,7 @@ For **discrete** r.v.s X and Y , the conditional PMF of Y given X =x is:
 $P(Y = y| X = x) = \frac{P(X=x, Y=y)}{P(X=x)}$  
 
 ### Properties
-+ X,Y are independent if: F_{X, Y}(x,y) = F_X(x)F_Y(y)  
++ X,Y are independent if: $F_{X, Y}(x,y) = F_X(x)F_Y(y)$
 + $P(X = x, Y = y) = P(X=x)P(Y=y)$  
 + For all $P(X = x) > 0$: $P(Y = y|X = x) = P(Y=y)$  
 
