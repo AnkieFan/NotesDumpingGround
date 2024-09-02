@@ -58,4 +58,4 @@
 + Product rule: $p(x,y) = p(x|y)p(y)$
 + Symmetry property: $p(x,y) = p(y,x)$
 + Bayes rule: $p(y|x) = \frac{p(x|y)p(y)}{p(x)}$
-  + $p(x) = \sum_y p(x,y) = \sum_y p(x|y)p(y)$ (refers to [Law of total probability](..\ProSta\Lec2.md))
+  + $p(x) = \sum_y p(x,y) = \sum_y p(x|y)p(y)$ (refers to [Law of total probability](../../../ProSta/Lec2.md))
