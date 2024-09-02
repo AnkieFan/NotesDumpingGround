@@ -24,8 +24,8 @@ $C = A_1 \cap A_2 \cap ... A_{10} = \cap_{j=1}^{10} A_j$
 ## Binomial Coefficient Formula
 + With replacement, order doesn't matter
 + For $k\leq n$, we have 
-  $$\begin{pmatrix} n \\ k \end{pmatrix} = \frac{n(n-1)...(n-k+1)}{k!} = \frac{n!}{(n-k)!k!}$$ (is equal to $C^n_k$)
-+ For $k \leq n$, we have  $$\begin{pmatrix} n \\ k \end{pmatrix} = 0$$
+  $\begin{pmatrix} n \\ k \end{pmatrix} = \frac{n(n-1)...(n-k+1)}{k!} = \frac{n!}{(n-k)!k!}$ (is equal to $C^n_k$)
++ For $k \leq n$, we have  $\begin{pmatrix} n \\ k \end{pmatrix} = 0$
 
 ## Intuition
 1. $P(\empty)$ = 0, P(S) = 1$

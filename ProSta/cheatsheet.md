@@ -88,6 +88,8 @@ Especially:
 $X \sim Bin(n,p)$  
 PMF: $P(X = k) = \begin{pmatrix} n \\ k \end{pmatrix} p^k(1-p)^{n-k}$  
 
+$\begin{pmatrix} n \\ k \end{pmatrix} =\frac{n!}{k!(n-k)!}$
+
 ## Hypothesis Testing
 Likelihood ration for $x_i =  \frac{P(X = x|H_0)}{P(X = x|H_A)}$  
 
@@ -108,7 +110,7 @@ $\int_a^b \int_a^y f_{X,Y}(x,y)dxdy = \int_a^b (\int_a^y f_{X,Y}(x,y)dx)dy = 1$
 For x:
 $f_X(x) = \int_a^xf_{X,Y}(x,y)dy$
 ### Conditional PDF
-For all x with $f_X(x) >0$
+For all x with $f_X(x) >0$  
 $f_{Y|X}(y|x) = \frac{f_{X,Y}(x,y)}{f_X(x)}$
 
 ## Population, Sample, and Confidence Intervals

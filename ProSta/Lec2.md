@@ -7,7 +7,7 @@ $P(A|B) = \frac{P(A \cap B)}{P(B)} $
 + $P (A|B)$ is the probability of A given the evidence B, not the probability of some entity called $A|B$ -> is not an event
 
 ## Bayes' rule
-$P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P(B|A)P(A)}{P(B)}$
+$P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P(B|A)P(A)}{P(B)}$  
 $P(B|A) = \frac{P(A \cap B)}{P(A)}$
 
 ## Bayes' rule Law of total probability
