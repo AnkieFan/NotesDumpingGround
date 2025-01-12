@@ -78,9 +78,9 @@ select ename,job from emp where job in ( 'SALESMAN' , 'MANAGER');
 #### in 等同于 or in后面不是区间 是值    not in：不是这几个值的
 
 ### 模糊查询 like 
-在模糊查询中：% 和 _ 
+在模糊查询中：% 和 _  
 %：任意多个字符      
-_：任意一个字符
+_：任意一个字符  
 
 找出名字里含有O的：
 `select ename from emp where ename like '%O%';`
@@ -153,6 +153,17 @@ e.g: `select ename,(sal+comm)*12 as yearsal from emp;`
 ifnull() 空处理函数：（单行处理函数）
 ifnull(可能为null的数据，被当做什么来处理)
 e.g: select ename, ifnull(comm,0) from emp; 如果comm是null，当做0看待
+
+### IF:
+`IF(c.action="confirmed",1,0)`: if action is confirmed, it return 1, else 0
+
+### CASE WHEN:
+类似java中if else语句
+`CASE WHEN condition THEN result [WHEN ... THEN ...] ELSE result END`  
+
+e.g.:  
+`SELECT SUM(CASE WHEN rating < 3 then 1 else 0 end) FROM...;` == `IF(rating < 3, 1, 0)`
+`SUM(CASE WHEN state = 'approved' THEN amount ELSE 0 END)`
 
 ## GROUP BY / HAVING
 group by: 按照某个字段或者某些字段进行分组
@@ -248,6 +259,38 @@ a为主表 左连接
 a为主表 右连接
 
 ### 全连接：既左连接也右连接
+`SELECT id, name FROM Customers FULL JOIN Orders ON Customers.id = Orders.customer_id;`
+
+### 交叉连接： CROSS join
+`SELECT s.student_id, sub.subject_name FROM Students s CROSS JOIN Subjects sub;`
+| student_id | student_name |
+| ---------- | ------------ |
+| 1          | Alice        |
+| 2          | Bob          |
+| 13         | John         |
+| 6          | Alex         |
+
+| subject_name |
+| ------------ |
+| Math         |
+| Physics      |
+| Programming  |
+
+结果：
+| student_id | student_name | subject_name |
+| ---------- | ------------ | ------------ |
+| 1          | Alice        | Programming  |
+| 1          | Alice        | Physics      |
+| 1          | Alice        | Math         |
+| 2          | Bob          | Programming  |
+| 2          | Bob          | Physics      |
+| 2          | Bob          | Math         |
+| 13         | John         | Programming  |
+| 13         | John         | Physics      |
+| 13         | John         | Math         |
+| 6          | Alex         | Programming  |
+| 6          | Alex         | Physics      |
+| 6          | Alex         | Math         |
 
 ### 三张表的连接查询
 E.g: 找出每个员工的工资等级与部门名称：

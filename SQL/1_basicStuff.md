@@ -44,12 +44,13 @@ Create Retrieve Update Delete
 ## SQL常用命令
 ***只能在mysql中使用***
 1.  查看mysql版本 mysql -version
-2. 创建数据库 create database xxxxxxxx;
+2. 创建数据库 create database [if not exists] xxxxxxxx [charset = utf8];
 3. 查询数据库 select database(); 查询数据库版本 select version();
-4. \c 结束语句
-5. 退出 exit
-6. 查看创建表的时候使用的sql语句： show create table xxxxxx;
-7. 查看当前库中表：show tables;
+4. 使用数据库 use 库名;
+5. \c 结束语句
+6. 退出 exit
+7. 查看创建表的时候使用的sql语句： show create table xxxxxx;
+8. 查看当前库中表：show tables;
 查看其他库中表: show tables from xxxxxxx;
 
 ## Notations
@@ -58,3 +59,4 @@ Create Retrieve Update Delete
 + Field: 列/ a property of an entity
 + Row/record: 一行数据
 + Result set
++ 注释： -- / #
