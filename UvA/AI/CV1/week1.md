@@ -52,9 +52,89 @@
     + 3 DoG
   + t: translation (3*1)
     + t=0: no translation
+  + +7 units along the x-asis: t=[-7,0,0]^T
   + 描述相机在世界坐标系中的位置和朝向 Where the camera is
 + K: Intrinsic Matrix, 描述相机成像的内部参数 How the camera project from 3D to 2D
   + $K = \begin{bmatrix} f_x & s & u_0 \\ 0 & f_y & v_0 \\ 0 & 0 & 1 \end{bmatrix}$
   + $f_x, f_y$: focal length: y: vertical x:horizontal
   + $u_0, v_0$: optical/principal point, normally in the middle of projection image
   + $s$  skew
+  + Rotation:$K = \begin{bmatrix} 1 & 0 & 0 \\ 0 & cos(\theta) & -sin(\theta) \\ 0 & sin(\theta) & cos(\theta) \end{bmatrix}$
+
+## Image Representation
++ f: X -> Y, X:Pixel coordinates, Y:possible value for each pixel
+  + e.g.: binary image Y = {0. 1}
+  + Grayscale image: Y = {0, 1, ... , 255}
++ Quantization level: how many bits are used to represent a single pixel (1-bit: black and white)
++ Spatial Resolution: the number of pixels composing the image
+
+## Color
++ Four main factors influence image intensity values
+  + Illumination
+  + Geometry
+  + Reflection
+  + Camera (view & optics)
+
++ What makes for an image?
+  + Light source
+  + Object (s)
+  + Observer / Sensor
+
++ Object Colors
+  + Incident light – Illumination
+  + Object’s Reflectance
+
++ Bayer filter
+  + Green fills in half of checkerboard
+  + Red and Blue: 1/4
+
++ Light-Sensitive Cells
+  + Cones 6-7 million
+    + Sense Colors
+    + 3 types: 64% red, 32% green, 2% blue
+  + Rods 120 million
+    +  Sense B/W brightness in low illumination
+    +  1000X more light-sensitive tha
+ +  Averted vision 边缘有更多的rod
+    +  Peripheral vision-areas on retina have more rod cells that are sensitive in low-light conditions
+
++ Retina
+  + Photosensors (rods & cones) lie outermost in the retina
+  + Ganglion cells (retina’s output  neurons) lie innermost in the retina closest to the lens & front of the eye
+    + Responds maximally to light increments @ center (Excitatory + region)
+    + light decrements in the surround (Inhibitory - region)
+  + Central light: ON-center ↑ / OFF-surround cell↓
+  + Surrounded light: ON-center ↓/ OFF-surround cell↑
+  + for edge detect
+  + have no orientation preference
+
+### Calculations
++ Intensity: $I = \frac{X+Y+Z}{3}$
++ Chromaticity values: $x = \frac{X}{X+Y+Z}, y = \frac{Y}{X+Y+Z}, z = \frac{Z}{X+Y+Z}$
++ HUE:
+  + Point out on CIE graph
+  + Connect S(sunlight) and A (given point)
+  + find the cross point to CIE graph
++ Saturation:
+  + 哪个点更靠近光谱边界，就更“纯”，饱和度大
+  + 哪个点更靠近白点，就更“灰”，饱和度小
++ Colors produced through the mixture of S and A: the line between S and A
+
+## Color System
++ RGB color drawbacks
+  +  Strongly correlated channels
+  +  Perceptually non-meaningful
++ HSV Color Space
+  + Hue, Saturation, Value
+    + Higher Saturation → More intense colors
+    + Higher Value → Brighter colors
+    + Change Hue → Change Colors
++ chromaticity diagram 
+  + with wavelengths in nanometers
+  + e colors depicted depend on the color space of the device on which the image is viewed
++ sRGB Primaries
+  + Not all colors can be represented with RGB
++ Monitor / Printer / Scanner Gamut
+  + gamut: a triangle
+  + All colors a device generates are positive linear combinations from 3 light sources
+  + 3 light sources are the triangle’s vertices
