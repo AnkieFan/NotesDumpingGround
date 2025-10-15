@@ -404,3 +404,28 @@ Java代码：
 Int pageNo = 2; //页码是2
 Int pageSize = 10; //每页显示10条
 … limit, (pageNo-1)*pageSize, pageSize;
+
+### unnest
+If you have an array and you want to turn each element of the array into a separate row, you can use unnest:  
+`SELECT unnest(ARRAY['John', 'Jane', 'Doe']);`:
+|  |
+| ---- |
+| John |
+| Jane |  
+| Doe |  
+
+`SELECT * FROM unnest(ARRAY[1,2,3], ARRAY['a','b','c']);`:  
+|  |  |
+| ---- | ---- |
+| 1 | a |
+| 2 | b | 
+| 3 | c |
+
+`SELECT * FROM unnest(ARRAY['apple', 'banana', 'cherry']) WITH ORDINALITY;`:
+|  |  |
+| ---- | ---- |
+| apple | 1 |
+| banana | 2 | 
+| cherry | 3 |
+
+`SELECT order_id, unnest(product_ids) as product_id FROM orders;`
