@@ -50,6 +50,7 @@
   + R: Rotation (3*3)
     + R=I: no rotation
     + 3 DoG
+    + ![Rotation](imgs/rotation_matrix.png)
   + t: translation (3*1)
     + t=0: no translation
   + +7 units along the x-asis: t=[-7,0,0]^T
