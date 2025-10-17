@@ -1,3 +1,4 @@
+
 # Computer Vision
 
 ## Introduction
@@ -64,7 +65,7 @@
 
 ## Image Representation
 + f: X -> Y, X:Pixel coordinates, Y:possible value for each pixel
-  + e.g.: binary image Y = {0. 1}
+  + e.g.: binary image Y = {0, 1} 0: dark 1: light
   + Grayscale image: Y = {0, 1, ... , 255}
 + Quantization level: how many bits are used to represent a single pixel (1-bit: black and white)
 + Spatial Resolution: the number of pixels composing the image
@@ -99,15 +100,18 @@
  +  Averted vision 边缘有更多的rod
     +  Peripheral vision-areas on retina have more rod cells that are sensitive in low-light conditions
 
-+ Retina
++ **Retina**
   + Photosensors (rods & cones) lie outermost in the retina
   + Ganglion cells (retina’s output  neurons) lie innermost in the retina closest to the lens & front of the eye
     + Responds maximally to light increments @ center (Excitatory + region)
     + light decrements in the surround (Inhibitory - region)
-  + Central light: ON-center ↑ / OFF-surround cell↓
-  + Surrounded light: ON-center ↓/ OFF-surround cell↑
-  + for edge detect
-  + have no orientation preference
+  + receptive fields:
+    + Central light: ON-center ↑ / OFF-surround cell↓
+    + Surrounded light: ON-center ↓/ OFF-surround cell↑
+    + Center: excitement
+    + peripheral: inhibition
+    + for edge detect
+    + have no orientation preference
 
 ### Calculations
 + Intensity: $I = \frac{X+Y+Z}{3}$
