@@ -44,6 +44,10 @@
   + Rotation, Scaling, NOT Translation
 + Homog -> Cartesian: $[X,Y,W] => [X/W, Y/W]$ $[X,Y,Z,W] => [X/W, Y/W, Z/W]$
 + Car -> Homog: $(X,Y) => [X,Y,1]$, $(X,Y,Z) => [X,Y,Z,1]$
++ 2D image rotation: $\begin{bmatrix}  cos(\theta) & -sin(\theta) & 0 \\ sin(\theta) & cos(\theta) & 0 \\ 0 & 0 & 1 \end{bmatrix}$
++ Affine is any combination of translation, scale, rotation and shear:
+  + $\begin{bmatrix} a & b & c\\ d & e & f \\ 0 & 0 & 1 \end{bmatrix}$
+  + keep straight and ratio, but not angle and length
 
 ### 3D→2D Projection Matrix
 + $\bf{x = K[I\text{ }0]X}$

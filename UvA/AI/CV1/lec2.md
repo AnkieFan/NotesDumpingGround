@@ -114,10 +114,10 @@
   + 2. +/-
     + All positive: smoothing
     + Symmetric and half + half -: edge detection
-      + symmetric on x: vertical edge
-      + symmetric on y: horizontal edge
+      + [+ 0 -]: vertical edge
+      + [+ 0 -]^T: horizontal edge
       + 4-connected - and diag +: corner detection
-+ Frequency: 
++ **Frequency**: 
   + Low frequency: slow change in image (smooth area)
   + High frequency: quick change (edge, noise, details)
   + Low-pass filter: smoothen, denoise, blurring
