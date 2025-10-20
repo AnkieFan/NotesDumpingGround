@@ -1,16 +1,16 @@
 # Optical Flow, Tracking
 ## Optical Flow
-+ 2D Motion Field (MF): knows the 3D scene, describe projection of the 3D motion of 3D scene points onto 2D image plane
-+ 2D Optical-Flow Field (OF): Describes apparent motion in images, reasoning only in pixel space, does not know the 3D scene
++ Optical flow: apparent pixel motion between consecutive frames, 
+  + under assumption: **brightness constancy** and **small motion**
 + Optical flowd $o = (u,v)$, frame $f_{t+1} = f_t+o$
 
 ###  Apparent Motion (displacement) of Pixels
 + $I(x,y,t)$ pixe value at time t and location (x,y)
 + $u(x,y), v(x,y)$: horizontal/vertical component
 
-### Optical Flow –Lucas-Kanade Method
+### Optical Flow Lucas-Kanade Method !!!
 + Assume:
-  + central point and surrounding points have same Optical Flow u
+  + central point and surrounding points have same Optical Flow u -> Spatial Smoothness
   + small motion
   + high textured region
   + color/brightness constancy

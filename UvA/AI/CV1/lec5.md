@@ -2,6 +2,11 @@
 
 ## Global Transformation
 + For linear transformations, we can represent T as a matrix $p' = \bf{T}p$
++ $T = \begin{bmatrix} R_{n*n} & t_{n*1} \\ 0_{1*n} & 1 \end{bmatrix}$
+  + n: dimension
+  + Translation: $R = I$ 
+  + Rotation: $R^TR = I$, see lec1 note
+  + Scaling: diag matrix
 
 ### Scaling
 + multiplying each of its components by a scalar
@@ -35,3 +40,60 @@ $\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} 1 & \alpha_x & 0 
   + Some pixels may be skipped, leaving holes (black regions in the warped image).
   + (x',y') is usually not an integer → interpolation needed
 + Backward Warping: Output -> input, $(x,y) = T^{-1}(x', y')$
+
+## Image Stitching
++ Combine two or more overlapping images into one large image
+1. Reprojection model
+   1. Detect Keypoints (SIFT, Harris Corner, SURF, ORB)
+   2. keypoint matching (Euclidean/cosine distance)
+   3. solving transformation (directly compute the homography matrix)
+   4. RANSAC
+2. Planar mapping (planar projection)
+3. Blending (Feathering, Pyramid blending, alpha blending)
+
+### Recap: RANSAC
+1. select 2 random points
+2. fit the line
+3. compute the distances
+4. count the number of inliers
+until maximum number of iteration k reached
+
+# Image Classification
+## Bag of Words
++ detect local keypoints (e.g., SIFT, SURF, ORB)
++ compute a descriptor (e.g., 128-D SIFT vector).
++ clustered (usually with k-means) into K clusters
+  + Each cluster center = a visual word
+  + The set of all cluster centers = the visual vocabulary (codebook)
++ An image is then represented by a histogram over this vocabulary:
+  + Count how many of its descriptors fall into each cluster (word)
+  + Result = a fixed-length vector (like a word count histogram in NLP)
+
+### BoW model
+1. build a visual dictionary by clustering the descriptors
+2. Sample patches from the image
+3. Extract local features from the patches
+4. create a histogram of visual words
+
+### Weakness
++ Loss of spatial information: two features are same but at completely different position -> still similar
++ Choice of vocabulary size: hard to choose a proper one, and very poor scalability -> cannot recognize new feature that is not in vocabulary
++ Sensitivity to background clutter: Background textures may dominate the histogram
+
+### Classification steps:
+1. Collect a large, annotated dataset
+2. Split the dataset into training, validation and test sets
+3. Compute the BoW vocabulary using both the training and validation sets
+4. Generate BoW representation for all images in the training, validation and test sets
+5. Use the training set to train the classifier and the validation set to select hyperparameters
+6. Evaluate the performance
+
+### K-means:
+1. Select a value of K
+2. Select a feature vector for every pixel (color, texture, position, or combination of these etc.)
+3. Define a similarity measure between feature vectors 
+(Usually Euclidean distance)
+4. Apply the K-means algorithm to all the feature vectors
+
++ Pros: Finds cluster centers that minimize variance 
++ Cons: All clusters have spherical distribution, Prone to local minima, need to choose K

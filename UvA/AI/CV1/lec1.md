@@ -54,7 +54,7 @@
 + $[I\text{ }0]$ Extrinsic Matrix: $[R∣t]$
   + R: Rotation (3*3)
     + R=I: no rotation
-    + 3 DoG
+    + 3 DoG: axis–angle representation (axis direction = 2 DoF, rotation angle = 1 DoF),
     + ![Rotation](imgs/rotation_matrix.png)
   + t: translation (3*1)
     + t=0: no translation
@@ -63,6 +63,7 @@
 + K: Intrinsic Matrix, 描述相机成像的内部参数 How the camera project from 3D to 2D
   + $K = \begin{bmatrix} f_x & s & u_0 \\ 0 & f_y & v_0 \\ 0 & 0 & 1 \end{bmatrix}$
   + $f_x, f_y$: focal length: y: vertical x:horizontal
+  + flip: -fy: upside down
   + $u_0, v_0$: optical/principal point, normally in the middle of projection image
   + $s$  skew
   + Rotation:$K = \begin{bmatrix} 1 & 0 & 0 \\ 0 & cos(\theta) & -sin(\theta) \\ 0 & sin(\theta) & cos(\theta) \end{bmatrix}$
@@ -121,7 +122,7 @@
 + Intensity: $I = \frac{X+Y+Z}{3}$
 + Chromaticity values: $x = \frac{X}{X+Y+Z}, y = \frac{Y}{X+Y+Z}, z = \frac{Z}{X+Y+Z}$
 + HUE:
-  + Point out on CIE graph
+  + Point out S&A on CIE graph
   + Connect S(sunlight) and A (given point)
   + find the cross point to CIE graph
 + Saturation:

@@ -4,8 +4,8 @@
 
 
 ## Reflectance
-+ Ideal diffuse (Lambertian 漫反射)
-+ Ideal specular
++ Ideal diffuse (Lambertian 漫反射) -> all direction has same reflected I
++ Ideal specular/glossy -> only see the light when angle between V and N the same with N and L
 + Directional diffuse
 
 ### Shape from Shading
