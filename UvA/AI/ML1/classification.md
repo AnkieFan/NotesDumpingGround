@@ -4,13 +4,13 @@
 ### Discriminant Functions
 + Learn the conditional distribution $p(C_k|x)$ directly
 + linear discriminant analysis (LDA)
-+ support vector machines (SVMs)
++ support vector machines (SVMs), Perceptron
 
-### Probabilistic Discriminative Models
+### Probabilistic Discriminative Models 学后验
 + Linear/Logistic Regression
 + Neural Networks
 
-### Probabilistic Generative Models
+### Probabilistic Generative Models 学联合
 + find the joint probability distribution $p(x, C_k)$
   + includes Class-conditional densities $p(x|C_k)$ and Prior probabilities $p(C_k)$
   + $p(y|x) = p(x,y)/p(x)$
