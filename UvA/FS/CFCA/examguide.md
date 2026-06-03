@@ -3,6 +3,13 @@
 + GC–FID → fire debris, alcohols, solvents (quant)
 + HPLC–UV / Fluorescence → drugs, pharmaceuticals.
 + TLC–UV/chemical stains → quick field or lab screening.
+
+TIC (full scan): For unknown drug mixtures, explosives, complex fire debris → broad screening.
+
+SIM: For targeted quantification of known drugs (low LOD needed, e.g., trace cocaine in cigarette case).
+
+XIC: For post-run confirmation — pulling out key diagnostic ions from a mixture to back up ID.
+
 ## Chromatography : GC, HPLC, TLC
 ### GC: Gas chromatography
 + Separation of volatile compounds by partitioning between stationary phase (column coating) and gas mobile phase (carrier gas)
